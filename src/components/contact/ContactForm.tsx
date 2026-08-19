@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -67,12 +66,11 @@ export default function ContactForm() {
                     <SelectValue placeholder="Select a service" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="strategy">Strategy Consulting</SelectItem>
-                    <SelectItem value="operations">Operations Excellence</SelectItem>
-                    <SelectItem value="digital">Digital Transformation</SelectItem>
-                    <SelectItem value="leadership">Leadership Development</SelectItem>
-                    <SelectItem value="marketing">Marketing Services</SelectItem>
-                    <SelectItem value="learning">Learning Management</SelectItem>
+                    <SelectItem value="suite1-demo">Suite1 Platform Demo</SelectItem>
+                    <SelectItem value="automation">Business Automation</SelectItem>
+                    <SelectItem value="ai-integration">AI Integration</SelectItem>
+                    <SelectItem value="consulting">Strategic Consulting</SelectItem>
+                    <SelectItem value="implementation">Platform Implementation</SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
