@@ -10,12 +10,12 @@ export default function About() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">About Mike Beasley & Associates</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Official Suite1 Partner & Business Transformation Experts</h2>
             <p className="text-lg text-gray-600 mb-6">
-              With over 15 years of experience, Mike Beasley & Associates has established itself as a trusted partner for businesses seeking transformative growth. Our team of seasoned consultants brings diverse expertise across industries and functions.
+              As an authorized Suite1 partner, Mike Beasley & Associates combines the power of SuiteDash's all-in-one business platform with over 15 years of consulting expertise in automation, AI integration, and strategic transformation.
             </p>
             <p className="text-lg text-gray-600 mb-8">
-              We believe in a collaborative approach, working closely with our clients to develop tailored solutions that address their unique challenges and opportunities. Our commitment to excellence and innovation has earned us recognition as a leading consulting firm.
+              We don't just deliver software—we ensure it's configured, customized, and optimized for your specific business needs. Our comprehensive approach includes platform implementation, workflow automation, AI-powered enhancements, and ongoing strategic guidance to help you achieve sustainable growth.
             </p>
             
             <div className="grid grid-cols-2 gap-6 mb-8">
@@ -24,8 +24,8 @@ export default function About() {
                 <p className="text-gray-600">Years of Experience</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-black">95%</p>
-                <p className="text-gray-600">Client Satisfaction</p>
+                <p className="text-3xl font-bold text-black">Suite1</p>
+                <p className="text-gray-600">Official Partner</p>
               </div>
             </div>
             
@@ -60,7 +60,7 @@ export default function About() {
             </div>
             <div className="absolute -bottom-6 -left-6 bg-black text-white p-6 max-w-xs">
               <p className="text-lg font-medium mb-2">Our Mission</p>
-              <p>To empower organizations to achieve sustainable growth through innovative strategies and operational excellence.</p>
+              <p>To empower organizations with cutting-edge platform technology and expert guidance for sustainable growth and operational excellence.</p>
             </div>
           </div>
         </div>

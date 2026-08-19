@@ -18,22 +18,27 @@ export default function Hero() {
       {/* Content */}
       <div className="container mx-auto px-3 md:px-4.5 lg:px-6 relative z-20">
         <div className="max-w-3xl pt-16 md:pt-18 lg:pt-20">
+          <div className="mb-4">
+            <span className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 text-sm font-medium">
+              Official Suite1 Partner
+            </span>
+          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Strategic Consulting for Transformative Growth
+            Transform Your Business with Suite1 Platform & Expert Consulting
           </h1>
           <p className="text-xl text-white/90 mb-8 max-w-2xl">
-            We partner with forward-thinking organizations to navigate complex challenges and unlock sustainable growth opportunities.
+            Complete business management platform powered by SuiteDash, combined with automation, AI integration, and strategic consulting services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/services" passHref>
+            <Link href="/contact" passHref>
               <Button className="bg-white text-black hover:bg-gray-100 rounded-none px-8 py-6 text-lg">
-                Our Services
+                Request Platform Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Link href="/about" passHref>
+            <Link href="/services" passHref>
               <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white/50 rounded-none px-8 py-6 text-lg">
-                About Us
+                Explore Services
               </Button>
             </Link>
           </div>

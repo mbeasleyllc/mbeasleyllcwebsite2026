@@ -3,6 +3,7 @@ import Head from "next/head";
 import Layout from "@/components/layout/Layout";
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
+import PlatformFeatures from "@/components/home/PlatformFeatures";
 import About from "@/components/home/About";
 import CaseStudies from "@/components/home/CaseStudies";
 import Testimonials from "@/components/home/Testimonials";
@@ -14,14 +15,15 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Mike Beasley & Associates | Strategic Consulting for Transformative Growth</title>
-        <meta name="description" content="Mike Beasley & Associates partners with forward-thinking organizations to navigate complex challenges and unlock sustainable growth opportunities." />
+        <title>Mike Beasley & Associates | Suite1 Partner - Business Automation & AI Integration</title>
+        <meta name="description" content="Official Suite1 partner delivering SuiteDash platform, business automation, AI integration, and strategic consulting for transformative growth." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
       <Layout>
         <Hero />
         <Services />
+        <PlatformFeatures />
         <About />
         <CaseStudies />
         {/* Testimonials section temporarily hidden - to be updated later
