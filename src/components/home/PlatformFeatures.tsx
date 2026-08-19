@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
   Users, 
@@ -153,12 +154,12 @@ export default function PlatformFeatures() {
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
             Schedule a personalized demo to see how Suite1 can streamline your business and help you scale efficiently.
           </p>
-          <a 
+          <Link 
             href="/contact"
             className="inline-block bg-white text-black hover:bg-gray-100 transition-colors px-8 py-4 text-lg font-medium"
           >
             Schedule Your Demo
-          </a>
+          </Link>
         </div>
       </div>
     </section>
