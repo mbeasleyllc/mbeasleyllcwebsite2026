@@ -51,6 +51,16 @@ const nextConfig = {
    */
   async redirects() {
     return [
+      // ── Canonical host ───────────────────────────────────────
+      // Every canonical tag and the sitemap point at the apex. Without this,
+      // www and the apex serve identical content and compete with each other.
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.mbeasleyllc.com' }],
+        destination: 'https://mbeasleyllc.com/:path*',
+        permanent: true,
+      },
+
       // ── Retired service pages ────────────────────────────────
       { source: '/services/web-development', destination: '/services/websites-hosting-vps', permanent: true },
       { source: '/services/transformation', destination: '/services/ai-agents-automation', permanent: true },

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# No crawlable thank-you or utility routes exist yet; when one is added, add
+# a Disallow here and a noindex on the page itself.
+Disallow: /api/
+
+Sitemap: https://mbeasleyllc.com/sitemap.xml
