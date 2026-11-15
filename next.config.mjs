@@ -73,6 +73,14 @@ const nextConfig = {
       { source: '/Homepage', destination: '/', permanent: true },
       { source: '/design-services', destination: '/services', permanent: true },
       { source: '/training', destination: '/services', permanent: true },
+
+      // ── Old case studies ─────────────────────────────────────
+      // Removed with the repositioning: they were web-development stories that
+      // contradict the current offer. The prototype plans to bring case studies
+      // back once real automation pilot results exist, so these redirect to the
+      // credibility content that replaced them.
+      { source: '/case-studies', destination: '/about', permanent: true },
+      { source: '/case-studies/:slug', destination: '/about', permanent: true },
     ];
   },
 };
