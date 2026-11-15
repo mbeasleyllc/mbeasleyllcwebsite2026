@@ -1,9 +1,12 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarCheck, MessageSquare, Mail, MapPin, Clock } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import ContactForm from "@/components/contact/ContactForm";
+import SuiteDashForm from "@/components/contact/SuiteDashForm";
+import { hasSuiteDashForm } from "@/lib/suitedash";
 import {
   CONTACT_EMAIL,
   INTRO_BOOKING_URL,
@@ -226,20 +229,22 @@ export default function ContactPage() {
                 </p>
 
                 <div className="mt-10">
-                  <ContactForm />
+                  {hasSuiteDashForm ? <SuiteDashForm /> : <ContactForm />}
                 </div>
               </div>
 
               {/* Mike — "human contact reduces friction for a founder-led firm" */}
               <aside className="lg:pt-24">
                 <div className="rounded-xl border border-white/10 bg-midnight p-6">
-                  {/* Placeholder for the real headshot. */}
-                  <div className="flex h-32 w-32 items-center justify-center rounded-full border border-champagne/40 bg-ink">
-                    <span className="text-center text-xs leading-tight text-mist">
-                      Headshot
-                      <br />
-                      goes here
-                    </span>
+                  {/* The headshot carried over from the old site — same file as /about. */}
+                  <div className="relative h-32 w-32 overflow-hidden rounded-full border border-champagne/40">
+                    <Image
+                      src="/headshot-1731700227635-11-maof4udv.png"
+                      alt="Mike Beasley, founder of Mike Beasley & Associates"
+                      fill
+                      sizes="128px"
+                      className="object-cover object-top"
+                    />
                   </div>
 
                   <h3 className="mt-6 font-display text-xl font-semibold text-ivory">
