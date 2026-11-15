@@ -1,140 +1,167 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Linkedin, Twitter } from "lucide-react";
+import { Linkedin } from "lucide-react";
+import {
+  serviceGroups,
+  moreServices,
+  solutions,
+  CONTACT_EMAIL,
+} from "@/lib/nav";
 
-const navigation = {
-  services: [
-    { name: "Strategic Consulting", href: "/services/strategy" },
-    { name: "Digital Transformation", href: "/services/transformation" },
-    { name: "Operations Excellence", href: "/services/operations" },
-    { name: "Leadership Development", href: "/services/leadership" },
-    { name: "Market Expansion", href: "/services/market-expansion" },
-    { name: "Process Improvement", href: "/services/process-improvement" }
-  ],
-  company: [
-    { name: "About Us", href: "/about" },
-    { name: "Case Studies", href: "/case-studies" },
-    { name: "Insights", href: "/insights" },
-    { name: "Video Conference", href: "/video-conference" },
-    { name: "Contact", href: "/contact" }
-  ],
-};
+const company = [
+  { name: "About", href: "/about" },
+  { name: "Insights", href: "/insights" },
+  { name: "Contact", href: "/contact" },
+];
+
+const legal = [
+  { name: "Privacy Policy", href: "/privacy-policy" },
+  { name: "Terms of Service", href: "/terms" },
+  { name: "Accessibility", href: "/accessibility" },
+];
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="bg-black text-white py-16">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="inline-block mb-6">
-              <Image 
-                src="/mikebealsleyanassociate-logowht-v1-mao52vtw.png" 
-                alt="Beasley Consulting Logo" 
+    <footer className="bg-ink text-ivory">
+      <div className="container py-16">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
+          {/* ── Brand ─────────────────────────────────────────── */}
+          <div className="lg:col-span-2">
+            <Link
+              href="/"
+              className="inline-block"
+              aria-label="Mike Beasley & Associates — home"
+            >
+              <Image
+                src="/mikebealsleyanassociate-logowht-v1-mao52vtw.png"
+                alt="Mike Beasley & Associates"
                 width={180}
-                height={40}
+                height={44}
+                className="h-11 w-auto"
               />
             </Link>
-            <p className="text-gray-400 mb-6">
-              Strategic consulting for businesses navigating complex challenges and seeking transformative growth.
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-mist">
+              We connect your website, donor system, client portal and AI agents
+              into one operation, so your team can do the work only people can
+              do.
             </p>
-            <div className="flex space-x-4">
-              <a href="https://instagram.com" className="text-white hover:text-gray-300">
-                <Instagram size={20} />
+
+            <address className="mt-6 not-italic text-sm text-mist">
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="underline-offset-4 transition-colors hover:text-champagne hover:underline"
+              >
+                {CONTACT_EMAIL}
               </a>
-              <a href="https://www.linkedin.com/in/mike-beasley-04a8389/" className="text-white hover:text-gray-300">
-                <Linkedin size={20} />
-              </a>
-              <a href="https://twitter.com" className="text-white hover:text-gray-300">
-                <Twitter size={20} />
+              <p className="mt-2">Fairfax, Virginia</p>
+              <p className="mt-1 text-xs">
+                Serving Virginia and North Carolina — and remotely, anywhere in
+                the US.
+              </p>
+            </address>
+
+            {/* Only real profiles. Instagram and Twitter were placeholders. */}
+            <div className="mt-6">
+              <a
+                href="https://www.linkedin.com/in/mike-beasley-04a8389/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Mike Beasley on LinkedIn"
+                className="inline-flex items-center gap-2 text-sm text-mist transition-colors hover:text-champagne"
+              >
+                <Linkedin size={18} />
+                LinkedIn
               </a>
             </div>
           </div>
 
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4">Company</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/about" className="text-gray-400 hover:text-white">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-gray-400 hover:text-white">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/case-studies" className="text-gray-400 hover:text-white">
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link href="/insights" className="text-gray-400 hover:text-white">
-                  Insights
-                </Link>
-              </li>
+          {/* ── Services ──────────────────────────────────────── */}
+          <div>
+            <h2 className="type-eyebrow text-champagne">Services</h2>
+            <ul className="mt-4 space-y-3">
+              {serviceGroups.flatMap((g) => g.items).map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-mist transition-colors hover:text-ivory"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+              {moreServices.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-mist transition-colors hover:text-ivory"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/services/strategy" className="text-gray-400 hover:text-white">
-                  Strategy Consulting
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/operations" className="text-gray-400 hover:text-white">
-                  Operations Excellence
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/transformation" className="text-gray-400 hover:text-white">
-                  Digital Transformation
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/course-design" className="text-gray-400 hover:text-white">
-                  Course Design
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/web-development" className="text-gray-400 hover:text-white">
-                  Web Development
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/learning-management" className="text-gray-400 hover:text-white">
-                  Learning Management
-                </Link>
-              </li>
+          {/* ── Solutions ─────────────────────────────────────── */}
+          <div>
+            <h2 className="type-eyebrow text-champagne">Solutions</h2>
+            <ul className="mt-4 space-y-3">
+              {solutions.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-mist transition-colors hover:text-ivory"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h2 className="type-eyebrow mt-8 text-champagne">Company</h2>
+            <ul className="mt-4 space-y-3">
+              {company.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-mist transition-colors hover:text-ivory"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <address className="not-italic text-gray-400">
-              <p>10837 Verde Visa Drive</p>
-              <p>Fairfax, VA 22030</p>
-              <p className="mt-4">mike@mbeasleyllc.com</p>
-            </address>
+          {/* ── Legal ─────────────────────────────────────────── */}
+          <div>
+            <h2 className="type-eyebrow text-champagne">Legal</h2>
+            <ul className="mt-4 space-y-3">
+              {legal.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-mist transition-colors hover:text-ivory"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Beasley Consulting. All rights reserved.
+        <div className="mt-14 flex flex-col justify-between gap-4 border-t border-white/10 pt-8 md:flex-row md:items-center">
+          <p className="text-sm text-mist">
+            © {year} Mike Beasley &amp; Associates LLC. All rights reserved.
           </p>
-          <div className="flex space-x-6">
-            <Link href="/privacy" className="text-gray-400 hover:text-white text-sm">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-gray-400 hover:text-white text-sm">
-              Terms of Service
-            </Link>
-          </div>
+          <p className="text-xs text-mist">
+            Websites, hosting and VPS · Client portals · Donor management · AI
+            agents · IT integration
+          </p>
         </div>
       </div>
     </footer>

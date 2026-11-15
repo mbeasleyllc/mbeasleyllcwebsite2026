@@ -36,6 +36,35 @@ const nextConfig = {
       },
     ];
   },
+
+  /**
+   * Permanent redirects for retired URLs.
+   *
+   * Redirects are evaluated before the filesystem, so these win even while the
+   * old page files are still present. Keep every entry a 301: these are
+   * permanent moves and any inbound links should transfer their value.
+   *
+   * Group 1 — services retired in the v2 repositioning (courses/LMS dropped,
+   * old consulting offers replaced).
+   * Group 2 — paths that were live on the previous ClickSites host, so any
+   * inbound links or search results do not land on a 404.
+   */
+  async redirects() {
+    return [
+      // ── Retired service pages ────────────────────────────────
+      { source: '/services/web-development', destination: '/services/websites-hosting-vps', permanent: true },
+      { source: '/services/transformation', destination: '/services/ai-agents-automation', permanent: true },
+      { source: '/services/operations', destination: '/services/ai-agents-automation', permanent: true },
+      { source: '/services/strategy', destination: '/services', permanent: true },
+      { source: '/services/course-design', destination: '/services', permanent: true },
+      { source: '/services/learning-management', destination: '/services', permanent: true },
+
+      // ── Paths live on the previous host ──────────────────────
+      { source: '/Homepage', destination: '/', permanent: true },
+      { source: '/design-services', destination: '/services', permanent: true },
+      { source: '/training', destination: '/services', permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;
