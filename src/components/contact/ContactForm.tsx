@@ -1,17 +1,44 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { ArrowRight, AlertCircle } from "lucide-react";
+
+/**
+ * Contact form — posts to /api/contact (nodemailer over SMTP_* env vars).
+ *
+ * The prototype asks the form to be process-focused: "Asks what the visitor
+ * wants to automate, which pre-qualifies the lead." So the dropdown is about
+ * the process, not the product.
+ *
+ * Rebuilt on the v2 design tokens (ink/midnight surfaces, champagne accents,
+ * Fraunces headings) rather than the pre-redesign Tailwind classes.
+ */
 
 type Status = "idle" | "sending" | "sent" | "error";
+
+/** Options map to the prototype's six use cases. */
+const AUTOMATION_OPTIONS = [
+  { value: "intake", label: "Intake & enquiry handling" },
+  { value: "support", label: "Support & customer questions" },
+  { value: "scheduling", label: "Scheduling & reminders" },
+  { value: "documents", label: "Document processing" },
+  { value: "back-office", label: "Back-office workflows" },
+  { value: "reporting", label: "Reporting & dashboards" },
+  { value: "donor", label: "Donor management & giving" },
+  { value: "portal", label: "Client or member portal" },
+  { value: "hosting", label: "Hosting, website or VPS" },
+  { value: "integration", label: "Connecting the tools I already have" },
+  { value: "not-sure", label: "Not sure yet — help me find it" },
+];
+
+const inputClass =
+  "w-full rounded-md border border-white/15 bg-ink px-4 py-3 text-base text-ivory placeholder:text-mist/60 focus:border-champagne focus:outline-none focus:ring-1 focus:ring-champagne";
+
+const labelClass = "block text-sm font-medium text-ivory";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
   const [fallbackEmail, setFallbackEmail] = useState("");
-  const [service, setService] = useState("");
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -26,7 +53,7 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, service }),
+        body: JSON.stringify(data),
       });
       const body = (await res.json().catch(() => ({}))) as {
         error?: string;
@@ -41,203 +68,199 @@ export default function ContactForm() {
       }
 
       form.reset();
-      setService("");
       setStatus("sent");
     } catch {
-      setError("We couldn't reach the server. Please check your connection and try again.");
+      setError(
+        "We couldn't reach the server. Please check your connection and try again.",
+      );
       setStatus("error");
     }
   }
 
   const sending = status === "sending";
 
+  if (status === "sent") {
+    return (
+      <div
+        className="rounded-xl border border-champagne/40 bg-midnight p-8"
+        role="status"
+        aria-live="polite"
+      >
+        <h3 className="font-display text-2xl font-semibold text-ivory">
+          Thank you — your message is on its way.
+        </h3>
+        <p className="mt-3 text-mist">
+          You will get a reply, usually within one business day. If you would
+          rather not wait, you can book a review time above.
+        </p>
+        <button
+          type="button"
+          onClick={() => setStatus("idle")}
+          className="mt-6 inline-flex items-center gap-2 rounded-md border border-white/20 px-6 py-3 text-sm font-medium text-ivory transition-colors hover:border-champagne hover:text-champagne"
+        >
+          Send another message
+        </button>
+      </div>
+    );
+  }
+
   return (
-    <section className="py-24 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Send Us a Message</h2>
-          <p className="text-xl text-gray-600">
-            Fill out the form below and one of our consultants will get back to you within 24 hours.
-          </p>
-        </div>
-
-        <div className="max-w-3xl mx-auto">
-          {status === "sent" ? (
-            <div
-              className="bg-white p-10 shadow-lg text-center"
-              role="status"
-              aria-live="polite"
-            >
-              <h3 className="text-2xl font-bold mb-3">Thank you — your message is on its way.</h3>
-              <p className="text-gray-600 mb-6">
-                One of our consultants will get back to you within 24 hours.
-              </p>
-              <Button
-                type="button"
-                onClick={() => setStatus("idle")}
-                className="bg-black hover:bg-gray-800 text-white rounded-none py-6 px-8"
+    <form onSubmit={handleSubmit} noValidate className="space-y-6">
+      {status === "error" && (
+        <div
+          className="flex items-start gap-3 rounded-md border border-champagne/40 bg-midnight px-4 py-3 text-sm text-ivory"
+          role="alert"
+          aria-live="assertive"
+        >
+          <AlertCircle size={18} className="mt-0.5 shrink-0 text-champagne" aria-hidden="true" />
+          <span>
+            {error}{" "}
+            {fallbackEmail && (
+              <a
+                href={`mailto:${fallbackEmail}`}
+                className="font-medium text-champagne underline underline-offset-4"
               >
-                Send another message
-              </Button>
-            </div>
-          ) : (
-            <form className="bg-white p-8 shadow-lg" onSubmit={handleSubmit} noValidate>
-              <div className="space-y-6">
-                {status === "error" && (
-                  <div
-                    className="border border-red-300 bg-red-50 text-red-800 px-4 py-3 text-sm"
-                    role="alert"
-                    aria-live="assertive"
-                  >
-                    {error}{" "}
-                    {fallbackEmail && (
-                      <a href={`mailto:${fallbackEmail}`} className="underline font-medium">
-                        {fallbackEmail}
-                      </a>
-                    )}
-                  </div>
-                )}
+                {fallbackEmail}
+              </a>
+            )}
+          </span>
+        </div>
+      )}
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
-                      First Name*
-                    </label>
-                    <Input
-                      id="firstName"
-                      name="firstName"
-                      placeholder="Your first name"
-                      className="rounded-none"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
-                      Last Name*
-                    </label>
-                    <Input
-                      id="lastName"
-                      name="lastName"
-                      placeholder="Your last name"
-                      className="rounded-none"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Email*
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="Your email address"
-                      className="rounded-none"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                      Phone
-                    </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="Your phone number"
-                      className="rounded-none"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
-                    Company
-                  </label>
-                  <Input
-                    id="company"
-                    name="company"
-                    placeholder="Your company name"
-                    className="rounded-none"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
-                    Service of Interest
-                  </label>
-                  <Select value={service} onValueChange={setService}>
-                    <SelectTrigger id="service" className="rounded-none">
-                      <SelectValue placeholder="Select a service" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="suite1-demo">Suite1 Platform Demo</SelectItem>
-                      <SelectItem value="automation">Business Automation</SelectItem>
-                      <SelectItem value="ai-integration">AI Integration</SelectItem>
-                      <SelectItem value="consulting">Strategic Consulting</SelectItem>
-                      <SelectItem value="implementation">Platform Implementation</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Message*
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="Tell us about your project or inquiry"
-                    className="rounded-none min-h-[150px]"
-                    required
-                  />
-                </div>
-
-                {/* Honeypot: hidden from users, catnip for bots. */}
-                <div className="hidden" aria-hidden="true">
-                  <label htmlFor="website">Website</label>
-                  <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
-                </div>
-
-                <div className="flex items-start">
-                  <div className="flex items-center h-5">
-                    <input
-                      id="privacy"
-                      name="privacy"
-                      type="checkbox"
-                      className="h-4 w-4 text-black border-gray-300 rounded"
-                      required
-                    />
-                  </div>
-                  <div className="ml-3 text-sm">
-                    <label htmlFor="privacy" className="text-gray-600">
-                      I agree to the{" "}
-                      <Link href="/privacy" className="text-black underline">
-                        Privacy Policy
-                      </Link>{" "}
-                      and consent to being contacted regarding my inquiry.
-                    </label>
-                  </div>
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={sending}
-                  className="w-full bg-black hover:bg-gray-800 text-white rounded-none py-6 disabled:opacity-60"
-                >
-                  {sending ? "Sending…" : "Submit Inquiry"}
-                </Button>
-              </div>
-            </form>
-          )}
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div>
+          <label htmlFor="firstName" className={labelClass}>
+            First name <span className="text-champagne">*</span>
+          </label>
+          <input
+            id="firstName"
+            name="firstName"
+            className={`mt-2 ${inputClass}`}
+            placeholder="First name"
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="lastName" className={labelClass}>
+            Last name <span className="text-champagne">*</span>
+          </label>
+          <input
+            id="lastName"
+            name="lastName"
+            className={`mt-2 ${inputClass}`}
+            placeholder="Last name"
+            required
+          />
         </div>
       </div>
-    </section>
+
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div>
+          <label htmlFor="email" className={labelClass}>
+            Email <span className="text-champagne">*</span>
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            className={`mt-2 ${inputClass}`}
+            placeholder="you@example.com"
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="phone" className={labelClass}>
+            Phone <span className="text-mist">(optional)</span>
+          </label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            className={`mt-2 ${inputClass}`}
+            placeholder="Your phone number"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label htmlFor="company" className={labelClass}>
+          Organisation <span className="text-mist">(optional)</span>
+        </label>
+        <input
+          id="company"
+          name="company"
+          className={`mt-2 ${inputClass}`}
+          placeholder="Your organisation"
+        />
+      </div>
+
+      {/* The qualifying question, per the prototype. */}
+      <div>
+        <label htmlFor="service" className={labelClass}>
+          What do you want to automate?
+        </label>
+        <select
+          id="service"
+          name="service"
+          defaultValue="not-sure"
+          className={`mt-2 ${inputClass}`}
+        >
+          {AUTOMATION_OPTIONS.map((o) => (
+            <option key={o.value} value={o.value} className="bg-ink text-ivory">
+              {o.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div>
+        <label htmlFor="message" className={labelClass}>
+          Tell me about the process <span className="text-champagne">*</span>
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          rows={6}
+          className={`mt-2 min-h-[150px] ${inputClass}`}
+          placeholder="What happens today, roughly how often, and how long it takes. Anything specific you would like to fix."
+          required
+        />
+      </div>
+
+      {/* Honeypot: hidden from users, catnip for bots. */}
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
+      <div className="flex items-start gap-3">
+        <input
+          id="privacy"
+          name="privacy"
+          type="checkbox"
+          className="mt-1 h-4 w-4 shrink-0 rounded border-white/30 bg-ink accent-[#C9A961]"
+          required
+        />
+        <label htmlFor="privacy" className="text-sm text-mist">
+          I agree to the{" "}
+          <Link
+            href="/privacy"
+            className="text-champagne underline underline-offset-4"
+          >
+            Privacy Policy
+          </Link>{" "}
+          and consent to being contacted about this enquiry.
+        </label>
+      </div>
+
+      <button
+        type="submit"
+        disabled={sending}
+        className="inline-flex items-center gap-2 rounded-md bg-champagne px-7 py-3.5 text-base font-semibold text-ink transition-colors hover:bg-gold-soft disabled:opacity-60"
+      >
+        {sending ? "Sending…" : "Send message"}
+        {!sending && <ArrowRight size={18} />}
+      </button>
+    </form>
   );
 }

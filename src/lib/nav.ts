@@ -102,9 +102,13 @@ export const PORTAL_URL = "https://secure.mbeasleyllc.com";
 
 export const CONTACT_EMAIL = "mike@mbeasleyllc.com";
 
-/** Known-good booking link. The 30-minute review link still needs confirming,
- *  so the header CTA points at /contact, which offers both paths. */
-export const BOOKING_URL = "https://tidycal.com/mikebeasley/15-minute-meeting";
+/** The two booking paths the prototype calls for on /contact:
+ *  "15-minute intro and the 30-minute free automation review". */
+export const INTRO_BOOKING_URL = "https://tidycal.com/mikebeasley/15-minute-meeting";
+export const REVIEW_BOOKING_URL = "https://tidycal.com/mikebeasley/30-minute-meeting";
+
+/** The header CTA points at /contact, which offers both booking paths and the
+ *  form — one destination for every "Book a free review" button on the site. */
 export const REVIEW_HREF = "/contact";
 
 /** All eight capabilities, for the homepage grid. */
