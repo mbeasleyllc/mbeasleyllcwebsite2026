@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 /**
- * Shared hero for every inner page — the five service pages, the three
+ * Shared hero for every inner page: the five service pages, the three
  * audience pages and the two index pages.
  *
  * Generic on purpose: it takes plain content rather than a ServiceMeta, so a

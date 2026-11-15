@@ -56,7 +56,7 @@ export default function Capabilities() {
               Eight capabilities, one connected stack.
             </h2>
             <p className="type-lead mt-5 text-mist">
-              Most firms sell you one piece. We build the whole path — the
+              Most firms sell you one piece. We build the whole path: the
               website, the systems behind it, the agents that remove the routine,
               and the plumbing that holds it together.
             </p>
@@ -105,7 +105,7 @@ export default function Capabilities() {
           ))}
         </div>
 
-        {/* Supporting service — deliberately small, per the prototype. */}
+        {/* Supporting service: deliberately small, per the prototype. */}
         <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-white/10 pt-6">
           <span className="type-eyebrow text-mist">Also from us</span>
           {moreServices.map((m) => (

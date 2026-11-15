@@ -8,7 +8,7 @@ import ClosingCta from "@/components/home/ClosingCta";
 import { getSolution, SOLUTION_SITE_URL } from "@/lib/solutions";
 
 /**
- * /solutions/associations — membership bodies. Renewals, member documents and
+ * /solutions/associations: membership bodies. Renewals, member documents and
  * one login for every member.
  */
 
@@ -99,7 +99,7 @@ export default function Associations() {
               </h2>
               <p className="type-lead mt-5 text-graphite">
                 Associations usually run lean, often with volunteer officers.
-                The work does not disappear — it just moves to whoever is
+                The work does not disappear. It just moves to whoever is
                 willing.
               </p>
             </div>
@@ -173,7 +173,7 @@ export default function Associations() {
                 </h2>
                 <p className="type-lead mt-5 text-graphite">
                   Membership counts, retention, renewal status and event
-                  attendance assembled from live data — not rebuilt in a
+                  attendance assembled from live data, not rebuilt in a
                   spreadsheet the night before the meeting.
                 </p>
                 <Link

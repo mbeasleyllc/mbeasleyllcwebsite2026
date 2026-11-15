@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 /**
- * FAQ — answers the real objections (what digital transformation means,
+ * FAQ: answers the real objections (what digital transformation means,
  * whether automation means job cuts, whether you need a VPS, and whether
  * it works with the tools they already own).
  *
@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "Does automation mean cutting staff?",
-    a: "No — and we are careful about this. Automation takes over the routine so the people you have can carry more, with less chasing and fewer errors. Lean means capacity and efficiency, not job losses.",
+    a: "No, and we are careful about this. Automation takes over the routine so the people you have can carry more, with less chasing and fewer errors. Lean means capacity and efficiency, not job losses.",
   },
   {
     q: "Do we need a VPS?",
@@ -50,7 +50,7 @@ export default function Faq() {
               The things people ask first.
             </h2>
             <p className="mt-5 text-graphite">
-              If yours is not here, ask it on the review call — that is what it
+              If yours is not here, ask it on the review call. That is what it
               is for.
             </p>
           </div>

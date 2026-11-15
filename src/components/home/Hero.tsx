@@ -15,7 +15,7 @@ const proof = [
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-ink pt-32 pb-16 md:pt-40 md:pb-20">
-      {/* Warm wash behind the hero — pure CSS, no image payload. */}
+      {/* Warm wash behind the hero: pure CSS, no image payload. */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-40 right-[-10%] h-[34rem] w-[34rem] rounded-full bg-champagne/10 blur-3xl"
@@ -38,7 +38,7 @@ export default function Hero() {
 
             <p className="type-lead mt-6 max-w-prose text-mist">
               We connect your website, donor system, client portal and AI agents
-              into one operation — so your team can do the work only people can
+              into one operation, so your team can do the work only people can
               do.
             </p>
 

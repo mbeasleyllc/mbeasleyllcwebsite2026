@@ -4,7 +4,7 @@ import { solutions } from "@/lib/solutions";
 import { insights } from "@/lib/insights";
 
 /**
- * /sitemap.xml — generated from the same configs the pages are built from, so
+ * /sitemap.xml: generated from the same configs the pages are built from, so
  * a new service or audience page appears here automatically rather than being
  * forgotten. The launch checklist asks for "canonicals, clean sitemap".
  *
@@ -79,7 +79,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   return { props: {} };
 };
 
-/** Never rendered as HTML — getServerSideProps writes the response directly. */
+/** Never rendered as HTML: getServerSideProps writes the response directly. */
 export default function Sitemap() {
   return null;
 }

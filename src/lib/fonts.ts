@@ -13,7 +13,7 @@ import localFont from "next/font/local";
  * Files live in src/fonts/ and are the `latin` subsets from Google Fonts.
  */
 
-/* Display face — Fraunces Semibold (static instance, weight 600). */
+/* Display face: Fraunces Semibold (static instance, weight 600). */
 export const fraunces = localFont({
   src: [{ path: "../fonts/fraunces-latin.woff2", weight: "600", style: "normal" }],
   variable: "--font-display",
@@ -21,7 +21,7 @@ export const fraunces = localFont({
   fallback: ["ui-serif", "Georgia", "serif"],
 });
 
-/* Body face — Plus Jakarta Sans (variable, weight 400–700). */
+/* Body face: Plus Jakarta Sans (variable, weight 400–700). */
 export const jakarta = localFont({
   src: [{ path: "../fonts/jakarta-latin.woff2", weight: "400 700", style: "normal" }],
   variable: "--font-sans",

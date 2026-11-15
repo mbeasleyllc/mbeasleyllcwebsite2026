@@ -6,7 +6,7 @@
  * That replaces the nodemailer path in /api/contact, which needed SMTP
  * credentials to be set in Hostinger before it would do anything.
  *
- * IMPORTANT — three different URLs, only one of which works here.
+ * IMPORTANT: three different URLs, only one of which works here.
  *
  *   /frm/21SNLBNW3uzVkf        the admin path. 302s to /site/login, and the
  *                              login page sends `X-Frame-Options: DENY`, so a
@@ -18,11 +18,11 @@
  *                              header, and the real form (title "…Lets Talk!
  *                              Form"). This is the one to frame.
  *
- * The public token is the admin id plus the `nGP` suffix — easy to miss, and
+ * The public token is the admin id plus the `nGP` suffix. It is easy to miss, and
  * the reason the admin URL appeared to be the form when it is not.
  */
 
-/** Public form endpoint — frameable, no X-Frame-Options. */
+/** Public form endpoint: frameable, no X-Frame-Options. */
 export const SUITEDASH_FORM_URL =
   "https://secure.mbeasleyllc.com/frm/21SNLBNW3uzVkfnGP";
 
@@ -43,7 +43,7 @@ export const SUITEDASH_FALLBACK_URL =
  * Frame height in px.
  *
  * Measured, not guessed: at the wrapper's 663px width the form's content ends
- * at 694px (4 fields — first name, last name, email, phone — plus SUBMIT).
+ * at 694px (4 fields: first name, last name, email, phone, plus SUBMIT).
  * SuiteDash's own embed script hardcodes 600, which clips the submit button;
  * 900 was my first attempt and left 170px of dead white space. 800 clears the
  * content on desktop and gives narrow viewports some room, where the fields

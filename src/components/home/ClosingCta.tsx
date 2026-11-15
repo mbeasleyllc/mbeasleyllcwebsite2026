@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { CONTACT_EMAIL, REVIEW_HREF } from "@/lib/nav";
 
 /**
- * Closing CTA — repeats the single main action (free automation review)
+ * Closing CTA: repeats the single main action (free automation review)
  * with email as the fallback for people who would rather not book.
  */
 export default function ClosingCta() {

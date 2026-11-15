@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, AlertCircle } from "lucide-react";
 
 /**
- * Contact form — posts to /api/contact (nodemailer over SMTP_* env vars).
+ * Contact form: posts to /api/contact (nodemailer over SMTP_* env vars).
  *
  * The prototype asks the form to be process-focused: "Asks what the visitor
  * wants to automate, which pre-qualifies the lead." So the dropdown is about
@@ -27,7 +27,7 @@ const AUTOMATION_OPTIONS = [
   { value: "portal", label: "Client or member portal" },
   { value: "hosting", label: "Hosting, website or VPS" },
   { value: "integration", label: "Connecting the tools I already have" },
-  { value: "not-sure", label: "Not sure yet — help me find it" },
+  { value: "not-sure", label: "Not sure yet: help me find it" },
 ];
 
 const inputClass =
@@ -87,7 +87,7 @@ export default function ContactForm() {
         aria-live="polite"
       >
         <h3 className="font-display text-2xl font-semibold text-ivory">
-          Thank you — your message is on its way.
+          Thank you. Your message is on its way.
         </h3>
         <p className="mt-3 text-mist">
           You will get a reply, usually within one business day. If you would

@@ -14,7 +14,7 @@ import {
 } from "@/lib/nav";
 
 /**
- * /contact — per the prototype (p.33) and the SEO blueprint (p.40):
+ * /contact: per the prototype (p.33) and the SEO blueprint (p.40):
  *   title "Book a Free Automation Review | Mike Beasley & Associates" (57)
  *   description 135 chars, H1 "Let's find what you can automate"
  *   two booking paths, a process-focused form, Mike's face and email
@@ -233,10 +233,10 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Mike — "human contact reduces friction for a founder-led firm" */}
+              {/* Mike: "human contact reduces friction for a founder-led firm" */}
               <aside className="lg:pt-24">
                 <div className="rounded-xl border border-white/10 bg-midnight p-6">
-                  {/* The headshot carried over from the old site — same file as /about. */}
+                  {/* The headshot carried over from the old site: same file as /about. */}
                   <div className="relative h-32 w-32 overflow-hidden rounded-full border border-champagne/40">
                     <Image
                       src="/headshot-1731700227635-11-maof4udv.png"
@@ -267,7 +267,7 @@ export default function ContactPage() {
                     <li className="flex items-start gap-3">
                       <MapPin size={17} className="mt-0.5 shrink-0 text-champagne" aria-hidden="true" />
                       <span className="text-mist">
-                        Based in Fairfax, Virginia — serving Virginia and North
+                        Based in Fairfax, Virginia, serving Virginia and North
                         Carolina, and remotely anywhere in the US.
                       </span>
                     </li>

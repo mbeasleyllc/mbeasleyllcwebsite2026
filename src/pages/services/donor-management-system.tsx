@@ -19,7 +19,7 @@ const flow = [
   {
     icon: Gift,
     title: "Gift received",
-    body: "Online, by card, by cheque or in person — recorded against the right donor and campaign.",
+    body: "Online, by card, by cheque or in person, recorded against the right donor and campaign.",
   },
   {
     icon: ReceiptText,
@@ -48,7 +48,7 @@ const options = [
   {
     name: "Custom donor system",
     best: "For unusual workflows",
-    body: "A system built around a process off-the-shelf tools do not fit — donor records, gifts, campaigns and reports shaped to how you actually work, hosted on your managed VPS.",
+    body: "A system built around a process off-the-shelf tools do not fit: donor records, gifts, campaigns and reports shaped to how you actually work, hosted on your managed VPS.",
     highlight: false,
   },
   {
@@ -180,7 +180,7 @@ export default function DonorManagementSystem() {
                   rel="noopener noreferrer"
                   className="font-medium text-gold-deep underline underline-offset-4"
                 >
-                  IRS — Charitable contributions: Written acknowledgments
+                  IRS, Charitable contributions: Written acknowledgments
                 </a>
                 . This is general guidance, not legal advice.
               </p>

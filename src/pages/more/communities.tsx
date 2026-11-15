@@ -6,7 +6,7 @@ import Layout from "@/components/layout/Layout";
 import ClosingCta from "@/components/home/ClosingCta";
 
 /**
- * /more/communities — the prototype moves community and membership content
+ * /more/communities: the prototype moves community and membership content
  * here specifically to preserve earlier SEO value:
  *
  *   "Community and membership content moves to /more/communities/ so earlier
@@ -127,7 +127,7 @@ export default function Communities() {
               </h1>
               <p className="type-lead mt-6 text-mist">
                 Most community software is easy to switch on and hard to keep
-                alive. The difference is the plumbing behind it — membership
+                alive. The difference is the plumbing behind it: membership
                 records, permissions, renewals and follow-up, all automated.
               </p>
             </div>

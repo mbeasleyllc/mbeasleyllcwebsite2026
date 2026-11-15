@@ -12,12 +12,12 @@ import { serviceGroups, moreServices } from "@/lib/nav";
  * enriched from src/lib/services.ts, so the hub, the mega-menu and the footer
  * can never disagree about what is on offer.
  *
- * Courses / LMS are deliberately absent — dropped from the offer in v2.
+ * Courses / LMS are deliberately absent: dropped from the offer in v2.
  */
 
 const TITLE = "Services | Mike Beasley & Associates";
 const DESCRIPTION =
-  "Websites and hosting, client portals, donor management, AI agents and IT integration — built and managed for nonprofits and small business.";
+  "Websites and hosting, client portals, donor management, AI agents and IT integration, built and managed for nonprofits and small business.";
 
 const bySlug = new Map<string, ServiceMeta>(services.map((s) => [s.slug, s]));
 
@@ -83,7 +83,7 @@ export default function ServicesPage() {
               <p className="type-lead mt-6 text-mist">
                 Websites and hosting, the portals and donor systems behind them,
                 and the automation that removes the routine. Built for
-                nonprofits, associations and small business — and managed, so
+                nonprofits, associations and small business, and managed, so
                 you are not left holding it.
               </p>
             </div>

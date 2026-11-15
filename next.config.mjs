@@ -44,9 +44,9 @@ const nextConfig = {
    * old page files are still present. Keep every entry a 301: these are
    * permanent moves and any inbound links should transfer their value.
    *
-   * Group 1 — services retired in the v2 repositioning (courses/LMS dropped,
+   * Group 1: services retired in the v2 repositioning (courses/LMS dropped,
    * old consulting offers replaced).
-   * Group 2 — paths that were live on the previous ClickSites host, so any
+   * Group 2: paths that were live on the previous ClickSites host, so any
    * inbound links or search results do not land on a 404.
    */
   async redirects() {
@@ -77,7 +77,7 @@ const nextConfig = {
       { source: '/terms-of-service', destination: '/terms', permanent: true },
 
       // ── Removed insights topic pages ─────────────────────────
-      // Six topic pages were fabricated — invented staff, "18 articles" while
+      // Six topic pages were fabricated: invented staff, "18 articles" while
       // listing six, and every article link 404ing. They were live, so they
       // redirect to the hub rather than 404 now that they are gone.
       { source: '/insights/topics/:slug', destination: '/insights', permanent: true },

@@ -10,7 +10,7 @@ import { getService, SERVICE_SITE_URL } from "@/lib/services";
 /**
  * Websites, Hosting & VPS (prototype p.23–24).
  * Search intent: managed hosting and VPS. The dashboard visual is built in
- * CSS rather than shipped as an image — replace with a real client dashboard
+ * CSS rather than shipped as an image; replace with a real client dashboard
  * screenshot once one exists.
  */
 

@@ -1,5 +1,5 @@
 /**
- * Service page metadata — single source of truth for the five service pages.
+ * Service page metadata: single source of truth for the five service pages.
  *
  * Titles and descriptions come from the prototype's SEO blueprint
  * (titles <= 62 chars, descriptions <= 160). Keeping them here means the nav,
@@ -29,7 +29,7 @@ export const services: ServiceMeta[] = [
     name: "Websites, Hosting & VPS",
     eyebrow: "Websites, Hosting & VPS",
     h1: "Fast, secure hosting and VPS, managed for you.",
-    lead: "SEO-ready websites on managed infrastructure — security, backups and monitoring handled, so your site and the systems behind it stay up without you thinking about them.",
+    lead: "SEO-ready websites on managed infrastructure: security, backups and monitoring handled, so your site and the systems behind it stay up without you thinking about them.",
     ctaLabel: "Talk about hosting",
     title: "Managed Website Hosting & VPS | Mike Beasley & Associates",
     description:
@@ -41,7 +41,7 @@ export const services: ServiceMeta[] = [
     name: "Client Portals",
     eyebrow: "Client Portals",
     h1: "Client portals without the email chain.",
-    lead: "Documents, e-signatures, forms, invoices and messages in one place your clients can actually find — connected to the systems you already run on.",
+    lead: "Documents, e-signatures, forms, invoices and messages in one place your clients can actually find, connected to the systems you already run on.",
     ctaLabel: "Book a portal planning call",
     title: "Client Portal Development | Mike Beasley & Associates",
     description:
@@ -53,7 +53,7 @@ export const services: ServiceMeta[] = [
     name: "Donor Management System",
     eyebrow: "Donor Management System",
     h1: "A donor management system that runs fundraising for you.",
-    lead: "Online giving, automatic acknowledgments, campaign tracking and board-ready reporting — built for lean fundraising teams who cannot afford admin time.",
+    lead: "Online giving, automatic acknowledgments, campaign tracking and board-ready reporting, built for lean fundraising teams who cannot afford admin time.",
     ctaLabel: "See a demo",
     title: "Donor Management System for Nonprofits | Mike Beasley",
     description:
@@ -65,7 +65,7 @@ export const services: ServiceMeta[] = [
     name: "AI Agents & Business Automation",
     eyebrow: "AI Agents & Business Automation",
     h1: "AI agents and automation that handle the routine.",
-    lead: "Intake, support triage, scheduling, document processing, back-office workflows and reporting — with human approval at every step that matters.",
+    lead: "Intake, support triage, scheduling, document processing, back-office workflows and reporting, with human approval at every step that matters.",
     ctaLabel: "Book an automation review",
     title: "AI Agents & Business Process Automation | Mike Beasley",
     description:
@@ -77,7 +77,7 @@ export const services: ServiceMeta[] = [
     name: "IT Integration",
     eyebrow: "IT Integration",
     h1: "Connect your tools into one efficient system.",
-    lead: "Your CRM, accounting, database, email and calendar, donor or client records and your forms — connected to one core, so information is entered once and trusted everywhere.",
+    lead: "Your CRM, accounting, database, email and calendar, donor or client records and your forms, connected to one core, so information is entered once and trusted everywhere.",
     ctaLabel: "Book an integration review",
     title: "IT Integration Services for Small Business | Mike Beasley & Associates",
     description:

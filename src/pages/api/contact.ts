@@ -9,7 +9,7 @@ type Payload = {
   company?: string;
   service?: string;
   message?: string;
-  /** Honeypot — real users never see this field. */
+  /** Honeypot: real users never see this field. */
   website?: string;
 };
 
@@ -101,7 +101,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // otherwise would silently lose enquiries.
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
     console.error(
-      "[contact] SMTP not configured — submission NOT delivered. Set SMTP_HOST, SMTP_USER and SMTP_PASS.",
+      "[contact] SMTP not configured; submission NOT delivered. Set SMTP_HOST, SMTP_USER and SMTP_PASS.",
       { from: email, service },
     );
     return res.status(503).json({
@@ -135,7 +135,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       // Email is regex-validated (no whitespace) and the name is CRLF-stripped,
       // so neither can inject headers.
       replyTo: `"${headerSafe(fullName)}" <${email}>`,
-      subject: `Website enquiry${service ? ` — ${service}` : ""} from ${headerSafe(fullName)}`,
+      subject: `Website enquiry${service ? `: ${service}` : ""} from ${headerSafe(fullName)}`,
       text: lines.join("\n"),
       html: `<h2>Website enquiry</h2>
 <p><strong>Name:</strong> ${escapeHtml(fullName)}<br>

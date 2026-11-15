@@ -12,21 +12,21 @@ import { getService, SERVICE_SITE_URL } from "@/lib/services";
  * Workflow visual (trigger → agent → approval → action), six use cases,
  * the automation ladder, and the "safe by design" answers to the main objection.
  *
- * AI agents and business automation share one page at launch — split them
+ * AI agents and business automation share one page at launch; split them
  * when each has enough content to rank on its own.
  */
 
 const service = getService("/services/ai-agents-automation");
 
 const pipeline: { text: string; kind: TagKind }[] = [
-  { text: "Something happens — a form, an email, a gift, a deadline", kind: "auto" },
+  { text: "Something happens: a form, an email, a gift, a deadline", kind: "auto" },
   { text: "An agent reads it, decides what it is and drafts the response", kind: "ai" },
   { text: "A person approves anything that matters", kind: "person" },
   { text: "The system acts: sends, files, updates, schedules, reports", kind: "auto" },
 ];
 
 const useCases = [
-  { icon: Inbox, title: "Intake & qualification", body: "Enquiries triaged on arrival, tagged and routed — with a drafted reply waiting for approval." },
+  { icon: Inbox, title: "Intake & qualification", body: "Enquiries triaged on arrival, tagged and routed, with a drafted reply waiting for approval." },
   { icon: Headphones, title: "Support triage", body: "Common questions answered from your own material; anything unusual escalated to a person." },
   { icon: CalendarClock, title: "Scheduling", body: "Calls booked, reminders sent and no-shows followed up without anyone watching a calendar." },
   { icon: FileCog, title: "Document processing", body: "Forms, applications and invoices read, checked and entered into the right system." },
@@ -36,13 +36,13 @@ const useCases = [
 
 const ladder = [
   { step: "Rules", body: "Start with the deterministic wins: if this, then that. No AI, no risk, immediate hours saved." },
-  { step: "AI-assisted", body: "Agents draft, summarise and classify — but a person still sends and approves everything." },
+  { step: "AI-assisted", body: "Agents draft, summarise and classify, but a person still sends and approves everything." },
   { step: "Agents", body: "Agents act within defined limits, with permissions, logs and a clear list of what they may never do." },
   { step: "Measurement", body: "Every step is measured against the baseline, so you can see what the automation actually returned." },
 ];
 
 const guardrails = [
-  { icon: ShieldCheck, title: "Approval gates", body: "You define which actions an agent may take alone and which always need a person — sending to key contacts, moving money, deleting data." },
+  { icon: ShieldCheck, title: "Approval gates", body: "You define which actions an agent may take alone and which always need a person, including sending to key contacts, moving money, deleting data." },
   { icon: Lock, title: "Permissions", body: "Least-privilege access, role-based permissions and a decision on which data agents may see and where it is processed." },
   { icon: ScrollText, title: "Logs", body: "Every agent action is recorded, so you can answer \u201cwhy did that happen?\u201d months later." },
   { icon: LifeBuoy, title: "Fallbacks", body: "When an agent is unsure, the work goes to a person rather than being guessed at." },
@@ -75,7 +75,7 @@ export default function AiAgentsAutomation() {
               </h2>
               <p className="type-lead mt-5 text-graphite">
                 Every automation we build follows the same shape. That is what
-                keeps it predictable — and what makes the human control point
+                keeps it predictable, and what makes the human control point
                 visible rather than implied.
               </p>
             </div>

@@ -8,13 +8,13 @@ import ClosingCta from "@/components/home/ClosingCta";
 import { CONTACT_EMAIL } from "@/lib/nav";
 
 /**
- * /about — the prototype's frame: "Mike as the differentiator. A named,
+ * /about: the prototype's frame: "Mike as the differentiator. A named,
  * hands-on partner; the chips reflect the new service list."
  *
  * The bio uses only facts carried over from the previous site (founded the
  * firm, 15+ years in complex business projects, prior senior roles in
  * Healthcare and Education). The old page's "95% Client Satisfaction" figure
- * is deliberately dropped — the prototype says to avoid numeric claims and
+ * is deliberately dropped. The prototype says to avoid numeric claims and
  * "use only facts that are true today".
  *
  * Confirm the 15+ years figure and which headshot is current before launch.
@@ -47,7 +47,7 @@ const approach = [
   {
     icon: Hammer,
     title: "We build one thing properly",
-    body: "A single workflow or system, built, tested and measured against a baseline — rather than a large programme that stalls.",
+    body: "A single workflow or system, built, tested and measured against a baseline, rather than a large programme that stalls.",
   },
   {
     icon: LifeBuoy,
@@ -149,7 +149,7 @@ export default function AboutPage() {
               <p className="type-lead mt-6 text-mist">
                 Mike Beasley &amp; Associates is a small, founder-led firm. The
                 person who scopes your work is the person who builds it and
-                supports it — which is the point, not a limitation.
+                supports it, which is the point, not a limitation.
               </p>
             </div>
           </div>
@@ -159,7 +159,7 @@ export default function AboutPage() {
         <section className="section bg-ivory">
           <div className="container">
             <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
-              {/* Portrait — real asset carried over from the previous site. */}
+              {/* Portrait: real asset carried over from the previous site. */}
               <div className="lg:col-span-2">
                 <div className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-xl border border-ink/10 bg-ink/5">
                   <Image
@@ -189,7 +189,7 @@ export default function AboutPage() {
                     business solution projects and programmes, before founding
                     Mike Beasley &amp; Associates LLC. His background includes
                     senior leadership roles in the healthcare and education
-                    sectors — both environments where systems have to work, and
+                    sectors, both environments where systems have to work, and
                     where a failed process is felt by real people.
                   </p>
                   <p>

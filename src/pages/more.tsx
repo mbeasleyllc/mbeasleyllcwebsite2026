@@ -6,7 +6,7 @@ import Layout from "@/components/layout/Layout";
 import ClosingCta from "@/components/home/ClosingCta";
 
 /**
- * /more — the "also from us" index. The prototype keeps these two findable but
+ * /more: the "also from us" index. The prototype keeps these two findable but
  * out of the main journey:
  *
  *   "Brand design stays as a one-line 'Also from us' row"
@@ -18,7 +18,7 @@ import ClosingCta from "@/components/home/ClosingCta";
 const SITE_URL = "https://mbeasleyllc.com";
 const TITLE = "Also From Us | Mike Beasley & Associates";
 const DESCRIPTION =
-  "Brand and logo design, and community platforms — services we offer alongside business automation, hosting and portals.";
+  "Brand and logo design, and community platforms: services we offer alongside business automation, hosting and portals.";
 
 const items = [
   {
@@ -31,7 +31,7 @@ const items = [
     icon: Users,
     name: "Communities",
     href: "/more/communities",
-    body: "Online communities and membership platforms — the same infrastructure that runs portals, applied to member engagement.",
+    body: "Online communities and membership platforms, the same infrastructure that runs portals, applied to member engagement.",
   },
 ];
 
@@ -73,7 +73,7 @@ export default function MorePage() {
                 Other things we do well.
               </h1>
               <p className="type-lead mt-6 text-mist">
-                These are not the core offer — automation, hosting, portals and
+                These are not the core offer: automation, hosting, portals and
                 donor systems are. But we have done them for years, and they
                 come up often enough to keep here.
               </p>

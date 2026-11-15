@@ -25,7 +25,7 @@ export default function Home() {
   /**
    * The blueprint asks for Organization markup on the home page
    * ("Organization markup (JSON-LD, home page)"), naming ProfessionalService
-   * and WebSite. sameAs lists only the real LinkedIn profile — the prototype
+   * and WebSite. sameAs lists only the real LinkedIn profile; the prototype
    * carried Facebook and Instagram placeholders that do not exist.
    */
   const organization = {

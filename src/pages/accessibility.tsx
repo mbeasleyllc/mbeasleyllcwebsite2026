@@ -6,7 +6,7 @@ import Layout from "@/components/layout/Layout";
 import { CONTACT_EMAIL } from "@/lib/nav";
 
 /**
- * /accessibility — the prototype lists this under Legal alongside privacy and
+ * /accessibility: the prototype lists this under Legal alongside privacy and
  * terms: "Legal /privacy-policy/ · /terms/ · /accessibility/".
  *
  * Written to state what is actually true of the site today rather than
@@ -127,8 +127,8 @@ export default function Accessibility() {
                     combination.
                   </li>
                   <li>
-                    Embedded third-party content — the video conferencing page
-                    in particular — is controlled by its provider and may not
+                    Embedded third-party content, the video conferencing page
+                    in particular, is controlled by its provider and may not
                     meet the same standard.
                   </li>
                   <li>

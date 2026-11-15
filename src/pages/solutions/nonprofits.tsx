@@ -8,8 +8,8 @@ import ClosingCta from "@/components/home/ClosingCta";
 import { getSolution, SOLUTION_SITE_URL } from "@/lib/solutions";
 
 /**
- * /solutions/nonprofits — the first audience entry point, and the one the
- * prototype leads with ("Nonprofits first — matches the strongest
+ * /solutions/nonprofits: the first audience entry point, and the one the
+ * prototype leads with ("Nonprofits first: matches the strongest
  * differentiator, donor management and acknowledgments").
  */
 
@@ -29,7 +29,7 @@ const pains = [
   {
     icon: BarChart3,
     title: "Board reports are rebuilt by hand",
-    body: "Every month someone exports, tidies and reformats the same numbers — and they never quite match last month's.",
+    body: "Every month someone exports, tidies and reformats the same numbers, and they never quite match last month's.",
   },
   {
     icon: ShieldCheck,
@@ -202,7 +202,7 @@ export default function Nonprofits() {
             <p className="mt-12 max-w-3xl text-sm text-graphite">
               You keep your current donor system if it works. Configuring a
               platform, building custom, and integrating what you already have
-              are all options —{" "}
+              are all options.{" "}
               <Link
                 href="/services/donor-management-system"
                 className="font-medium text-gold-deep underline underline-offset-4"

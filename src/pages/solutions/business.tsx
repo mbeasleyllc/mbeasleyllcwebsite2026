@@ -8,7 +8,7 @@ import ClosingCta from "@/components/home/ClosingCta";
 import { getSolution, SOLUTION_SITE_URL } from "@/lib/solutions";
 
 /**
- * /solutions/business — small and midsize business. Growth without admin
+ * /solutions/business: small and midsize business. Growth without admin
  * headcount: AI intake, portals, automation and integration.
  */
 
@@ -23,7 +23,7 @@ const pains = [
   {
     icon: FileText,
     title: "The same details typed again and again",
-    body: "From the form to the CRM to the quote to the invoice — three chances for a typo, no single source.",
+    body: "From the form to the CRM to the quote to the invoice: three chances for a typo, no single source.",
   },
   {
     icon: Repeat,

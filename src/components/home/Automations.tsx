@@ -2,7 +2,7 @@ import React from "react";
 import { WorkflowTagRow, type TagKind } from "@/components/ui/workflow-tag";
 
 /**
- * Signature automations — four concrete workflows showing how the work
+ * Signature automations: four concrete workflows showing how the work
  * moves without hand-offs. The AUTO / AI / PERSON tags make the human
  * control point visible, which is the main objection to automation.
  *

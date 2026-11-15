@@ -1,9 +1,9 @@
 /**
- * Audience ("solutions") page metadata — single source of truth for the three
+ * Audience ("solutions") page metadata: single source of truth for the three
  * segment entry points the prototype calls for:
  *
  *   "Solutions (by audience) /solutions/nonprofits/ · /associations/ ·
- *    /business/ — Audience pages give nonprofits, associations and businesses
+ *    /business/. Audience pages give nonprofits, associations and businesses
  *    their own entry points."
  *
  * The prototype gives no per-page blueprint for these, so the titles and
@@ -29,7 +29,7 @@ export const solutions: SolutionMeta[] = [
     name: "Nonprofits & Foundations",
     eyebrow: "For nonprofits & foundations",
     h1: "Fundraising that runs without the admin.",
-    lead: "Donor records, online giving, acknowledgments and board reporting in one system — so a lean fundraising team spends its time with donors, not in spreadsheets.",
+    lead: "Donor records, online giving, acknowledgments and board reporting in one system, so a lean fundraising team spends its time with donors, not in spreadsheets.",
     ctaLabel: "Book a free review",
     title: "Donor Systems for Nonprofits | Mike Beasley & Associates",
     description:
@@ -40,7 +40,7 @@ export const solutions: SolutionMeta[] = [
     name: "Associations & Membership",
     eyebrow: "For associations & membership bodies",
     h1: "Membership that renews itself.",
-    lead: "Member portals, renewals, dues and documents handled by the system rather than by whoever has time — with one login for every member.",
+    lead: "Member portals, renewals, dues and documents handled by the system rather than by whoever has time, with one login for every member.",
     ctaLabel: "Book a free review",
     title: "Membership Systems for Associations | Mike Beasley & Associates",
     description:
@@ -51,7 +51,7 @@ export const solutions: SolutionMeta[] = [
     name: "Small & Midsize Business",
     eyebrow: "For small & midsize business",
     h1: "Systems that scale without the headcount.",
-    lead: "Intake, quotes, invoicing and follow-up automated end to end — so growth does not mean hiring someone to move data between tools.",
+    lead: "Intake, quotes, invoicing and follow-up automated end to end, so growth does not mean hiring someone to move data between tools.",
     ctaLabel: "Book a free review",
     title: "Automation for Small Business | Mike Beasley & Associates",
     description:

@@ -5,8 +5,8 @@
  * these configs, so the homepage hero and the IT Integration hero cannot drift
  * apart. Adding a third use means adding a config here, not copying markup.
  *
- * Homepage hero  — the whole stack around the client's business (prototype p.12)
- * IT Integration — the client's existing tools around one connected core (p.31)
+ * Homepage hero: the whole stack around the client's business (prototype p.12)
+ * IT Integration: the client's existing tools around one connected core (p.31)
  */
 
 export type IconKey =
@@ -33,7 +33,7 @@ export type SystemDiagram = {
   nodes: SystemNode[];
 };
 
-/** Homepage hero — "website, donor system, portal, AI agents, integrations, VPS". */
+/** Homepage hero: "website, donor system, portal, AI agents, integrations, VPS". */
 export const homeSystems: SystemDiagram = {
   core: { eyebrow: "Core", label: "Your business" },
   nodes: [
@@ -46,7 +46,7 @@ export const homeSystems: SystemDiagram = {
   ],
 };
 
-/** IT Integration hero — "CRM, accounting, database, email and calendar,
+/** IT Integration hero: "CRM, accounting, database, email and calendar,
  *  donor or client system, and forms around one connected core". */
 export const integrationSystems: SystemDiagram = {
   core: { eyebrow: "One connected core", label: "Your systems" },

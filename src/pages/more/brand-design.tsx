@@ -6,10 +6,10 @@ import Layout from "@/components/layout/Layout";
 import ClosingCta from "@/components/home/ClosingCta";
 
 /**
- * /more/brand-design — deliberately kept out of the main navigation. The
+ * /more/brand-design: deliberately kept out of the main navigation. The
  * prototype demotes it to a one-line "Also from us" row:
  *
- *   "Course content removed, design kept small — Brand design stays as a
+ *   "Course content removed, design kept small. Brand design stays as a
  *    one-line 'Also from us' row."
  */
 
@@ -155,7 +155,7 @@ export default function BrandDesign() {
             <div className="mt-14 max-w-3xl rounded-xl border border-ink/10 bg-white p-6">
               <p className="text-graphite">
                 <span className="font-semibold text-ink">Honest note.</span>{" "}
-                Brand and logo work is not what we lead with — automation,
+                Brand and logo work is not what we lead with: automation,
                 hosting, portals and donor systems are. If a designer is the
                 better fit for a project, we will say so.
               </p>

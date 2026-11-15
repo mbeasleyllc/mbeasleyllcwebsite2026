@@ -18,7 +18,7 @@ import {
  * We frame the public endpoint directly rather than using SuiteDash's <script>.
  * The script works, but it hardcodes height=600 and leaves nowhere to put a
  * loading state or a fallback link. Framing it ourselves costs us exactly one
- * thing — the script's postMessage relay — which is reimplemented below.
+ * thing, the script's postMessage relay, which is reimplemented below.
  *
  * The frame cannot be styled from here; it is cross-origin. The wrapper is what
  * we control, so the wrapper carries the design: the frame is inset in a
@@ -66,7 +66,7 @@ export default function SuiteDashForm() {
 
   return (
     <div className="overflow-hidden rounded-xl border border-white/10 bg-midnight">
-      {/* Header strip — our design, our words. */}
+      {/* Header strip: our design, our words. */}
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-ink px-5 py-4">
         <div className="flex items-center gap-3">
           <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-midnight">
@@ -77,7 +77,7 @@ export default function SuiteDashForm() {
               Let&rsquo;s talk
             </p>
             <p className="text-xs text-mist">
-              Secure form — goes straight into our system
+              Secure form: straight into our system
             </p>
           </div>
         </div>
@@ -109,7 +109,7 @@ export default function SuiteDashForm() {
         <iframe
           ref={frameRef}
           src={SUITEDASH_FORM_URL}
-          title="Contact form — Mike Beasley & Associates"
+          title="Contact form for Mike Beasley & Associates"
           onLoad={() => setLoaded(true)}
           className="block h-full w-full border-0"
           style={{ height: SUITEDASH_FORM_HEIGHT }}

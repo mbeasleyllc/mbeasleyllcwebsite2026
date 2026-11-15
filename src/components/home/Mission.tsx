@@ -2,7 +2,7 @@ import React from "react";
 import { TrendingUp, Users2, Gauge } from "lucide-react";
 
 /**
- * Mission — digital transformation defined, then the three outcomes
+ * Mission: digital transformation defined, then the three outcomes
  * in the owner's own words (efficiency, lean operations, performance).
  */
 
@@ -20,7 +20,7 @@ const outcomes = [
   {
     icon: TrendingUp,
     title: "High-performing",
-    body: "Faster responses, cleaner records and reporting you can trust — measured against the baseline we set together.",
+    body: "Faster responses, cleaner records and reporting you can trust, measured against the baseline we set together.",
   },
 ];
 
@@ -36,8 +36,7 @@ export default function Mission() {
           </h2>
           <p className="type-lead mt-6 text-graphite">
             Digital transformation means replacing manual, disconnected
-            processes with connected, automated ones. Not a new tool to learn —
-            the same work, done without the re-typing, the waiting and the
+            processes with connected, automated ones. Not a new tool to learn: the same work, done without the re-typing, the waiting and the
             chasing. Automation takes over the routine so your people can focus
             on relationships, judgment and growth.
           </p>

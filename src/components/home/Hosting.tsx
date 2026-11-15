@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Server, ShieldCheck, RefreshCw, Activity, Eye } from "lucide-react";
 
 /**
- * Hosting as the foundation — explains why portals and donor systems run on
+ * Hosting as the foundation: explains why portals and donor systems run on
  * managed infrastructure rather than cheap shared hosting, and puts the
  * trust cues (backups, patching, monitoring, human approval) on the page.
  */
@@ -44,7 +44,7 @@ export default function Hosting() {
             <p className="type-lead mt-5 text-mist">
               A client portal or a donor database holds the records your
               organisation runs on. Shared hosting at a few dollars a month is
-              not built for that — and when it fails, nobody is on the hook.
+              not built for that, and when it fails, nobody is on the hook.
             </p>
             <p className="mt-5 text-mist">
               We host on managed infrastructure with real backups, patching and

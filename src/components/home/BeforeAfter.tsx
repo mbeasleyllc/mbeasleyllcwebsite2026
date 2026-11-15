@@ -2,7 +2,7 @@ import React from "react";
 import { X, Check } from "lucide-react";
 
 /**
- * Before and after — makes the problem tangible by naming the specific
+ * Before and after: makes the problem tangible by naming the specific
  * daily friction (re-typing, waiting, manual reminders, month-end reports)
  * rather than talking about "inefficiency" in the abstract.
  */
@@ -14,7 +14,7 @@ const rows = [
   },
   {
     before: "A gift arrives and the receipt waits until someone has time.",
-    after: "Receipt sent, record updated and follow-up queued — same day.",
+    after: "Receipt sent, record updated and follow-up queued. Same day.",
   },
   {
     before: "An enquiry sits in an inbox until someone notices it.",
@@ -40,7 +40,7 @@ export default function BeforeAfter() {
             The work you already recognise.
           </h2>
           <p className="type-lead mt-5 text-graphite">
-            None of this is unusual — it is what running a lean operation
+            None of this is unusual. It is what running a lean operation
             actually looks like. Here is the same week, automated.
           </p>
         </div>

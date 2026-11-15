@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { CONTACT_EMAIL } from "@/lib/nav";
 
 /**
- * About Mike — the differentiator is a named, hands-on partner rather than
+ * About Mike: the differentiator is a named, hands-on partner rather than
  * an agency. The chips mirror the new service list.
  *
  * NOTE: the bio below is a placeholder built only from facts already true.
@@ -35,7 +35,7 @@ export default function AboutMike() {
               <p>
                 Mike Beasley &amp; Associates is a small, founder-led firm. The
                 person who scopes your work is the person who builds it and
-                supports it — which is the point, not a limitation.
+                supports it, which is the point, not a limitation.
               </p>
               <p>
                 We work with organisations in Virginia and North Carolina, and
@@ -73,7 +73,7 @@ export default function AboutMike() {
             </div>
           </div>
 
-          {/* Portrait placeholder — swap for Mike's headshot. */}
+          {/* Portrait placeholder: swap for Mike's headshot. */}
           <div className="lg:col-span-2">
             <div className="flex aspect-[4/5] items-center justify-center rounded-xl border border-ink/10 bg-ink/5">
               <p className="px-6 text-center text-sm text-graphite">

@@ -7,7 +7,7 @@ import ClosingCta from "@/components/home/ClosingCta";
 import { solutions, SOLUTION_SITE_URL } from "@/lib/solutions";
 
 /**
- * /solutions — the audience hub. The prototype frames these as entry points:
+ * /solutions: the audience hub. The prototype frames these as entry points:
  *
  *   "Audience pages (/solutions/) give nonprofits, associations and businesses
  *    their own entry points."
@@ -17,7 +17,7 @@ import { solutions, SOLUTION_SITE_URL } from "@/lib/solutions";
 
 const TITLE = "Solutions by Audience | Mike Beasley & Associates";
 const DESCRIPTION =
-  "Automation and systems for nonprofits, associations and small business — donor management, member portals and workflow automation. Book a free review.";
+  "Automation and systems for nonprofits, associations and small business, including donor management, member portals and workflow automation. Book a free review.";
 
 export default function SolutionsPage() {
   const schema = {
@@ -76,8 +76,7 @@ export default function SolutionsPage() {
               </h1>
               <p className="type-lead mt-6 text-mist">
                 The same systems serve very different organisations. These pages
-                start from your day-to-day rather than from the software —
-                what is eating the time, and what changes first.
+                start from your day-to-day rather than from the software: what is eating the time, and what changes first.
               </p>
             </div>
           </div>

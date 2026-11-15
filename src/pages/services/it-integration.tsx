@@ -16,7 +16,7 @@ import ClosingCta from "@/components/home/ClosingCta";
 import { integrationSystems } from "@/lib/systems";
 
 /**
- * IT Integration — above-the-fold diagram is the SAME component as the
+ * IT Integration: above-the-fold diagram is the SAME component as the
  * homepage hero, driven by integrationSystems (prototype p.31): "CRM,
  * accounting, database, email and calendar, donor or client system, and
  * forms around one connected core".
@@ -42,7 +42,7 @@ const glue = [
   {
     icon: ArrowLeftRight,
     title: "Data migration",
-    body: "Moving records between systems without losing history — mapped, dry-run and reconciled before the switch.",
+    body: "Moving records between systems without losing history, mapped, dry-run and reconciled before the switch.",
   },
   {
     icon: Fingerprint,
@@ -152,7 +152,7 @@ export default function ItIntegration() {
                 </h1>
                 <p className="type-lead mt-6 max-w-prose text-mist">
                   Your CRM, accounting, database, email and calendar, donor or
-                  client records and your forms — connected to one core, so
+                  client records and your forms, connected to one core, so
                   information is entered once and trusted everywhere.
                 </p>
 
@@ -173,7 +173,7 @@ export default function ItIntegration() {
                 </div>
               </div>
 
-              {/* Same component as the homepage hero — different config. */}
+              {/* Same component as the homepage hero: different config. */}
               <SystemsHub
                 core={integrationSystems.core}
                 nodes={integrationSystems.nodes}

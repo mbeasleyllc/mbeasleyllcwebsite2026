@@ -24,7 +24,7 @@ const comparison = [
     with: "E-signatures requested, tracked and filed automatically.",
   },
   {
-    without: "\u201cCan you resend that invoice?\u201d — three times.",
+    without: "\u201cCan you resend that invoice?\u201d Three times.",
     with: "Invoices, statements and history visible whenever they look.",
   },
   {

@@ -15,7 +15,7 @@ import {
 import type { SystemDiagram, IconKey } from "@/lib/systems";
 
 /**
- * Connected-systems diagram — one component, driven by a config from
+ * Connected-systems diagram: one component, driven by a config from
  * src/lib/systems.ts. Used by the homepage hero and the IT Integration hero
  * so the two cannot drift apart: there is only ever one piece of markup.
  *
