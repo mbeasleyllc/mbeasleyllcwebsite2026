@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Loader2, ShieldCheck } from "lucide-react";
 import {
   SUITEDASH_FORM_URL,
+  SUITEDASH_ORIGIN,
   SUITEDASH_FALLBACK_URL,
   SUITEDASH_FORM_HEIGHT,
 } from "@/lib/suitedash";
@@ -9,27 +10,59 @@ import {
 /**
  * The SuiteDash "Let's talk" form inside a styled wrapper.
  *
- * Option 2 of the three integration choices: the form is a SuiteDash iframe, so
+ * Option 2 of the three integration choices: the form is a SuiteDash frame, so
  * submissions land in SuiteDash and can fire an automation, but it sits inside
  * our own card so the surrounding page still reads as mbeasleyllc.com rather
  * than dropping the visitor onto a bare vendor page.
  *
- * The iframe cannot be styled from here — cross-origin. The wrapper is what we
- * control, so the wrapper carries the design: the frame is inset in a bordered
- * panel with our own heading and a persistent escape hatch underneath.
+ * We frame the public endpoint directly rather than using SuiteDash's <script>.
+ * The script works, but it hardcodes height=600 and leaves nowhere to put a
+ * loading state or a fallback link. Framing it ourselves costs us exactly one
+ * thing — the script's postMessage relay — which is reimplemented below.
  *
- * That escape hatch is deliberate. If SuiteDash sends X-Frame-Options: DENY or
- * a restrictive frame-ancestors, the browser renders an empty box and the
- * visitor sees nothing. The "open in a new tab" link means a blocked frame
- * degrades to a working link instead of a dead end.
+ * The frame cannot be styled from here; it is cross-origin. The wrapper is what
+ * we control, so the wrapper carries the design: the frame is inset in a
+ * bordered panel with our own heading and a persistent escape hatch underneath.
  *
- * Renders nothing when no public embed URL is configured — the caller decides
- * what to show instead, so an unconfigured build never ships a broken frame.
+ * That escape hatch is deliberate. If SuiteDash ever starts sending
+ * X-Frame-Options: DENY, the browser renders an empty box and the visitor sees
+ * nothing. The "open in a new tab" link means a blocked frame degrades to a
+ * working link instead of a dead end.
  */
 export default function SuiteDashForm() {
   const [loaded, setLoaded] = useState(false);
+  const frameRef = useRef<HTMLIFrameElement>(null);
 
-  if (!SUITEDASH_FORM_URL) return null;
+  /**
+   * SuiteDash's embed script listens for postMessages from the frame and opens
+   * the target itself, so links clicked inside the form navigate the top window
+   * instead of being trapped in a fixed-height box.
+   *
+   * Ported from their script, both guards included: the message must come from
+   * their origin AND from this specific frame, and the URL must be absolute
+   * http(s) or root-relative. The second guard is what stops a frame from
+   * navigating the visitor off-site to an arbitrary destination.
+   */
+  useEffect(() => {
+    function onMessage(e: MessageEvent) {
+      if (e.origin !== SUITEDASH_ORIGIN) return;
+      if (e.source !== frameRef.current?.contentWindow) return;
+
+      const data = e.data;
+      if (!Array.isArray(data) || data[0] !== "r") return;
+      if (!Array.isArray(data[1]) || !data[1].length) return;
+
+      const target = String(data[1][0]);
+      const isAbsolute = /^https?:\/\//i.test(target);
+      const isRootRelative = /^\/(?!\/)/.test(target);
+      if (!isAbsolute && !isRootRelative) return;
+
+      window.open(target, data[1][1] === "_blank" ? "_blank" : "_self");
+    }
+
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, []);
 
   return (
     <div className="overflow-hidden rounded-xl border border-white/10 bg-midnight">
@@ -74,10 +107,10 @@ export default function SuiteDashForm() {
         )}
 
         <iframe
+          ref={frameRef}
           src={SUITEDASH_FORM_URL}
           title="Contact form — Mike Beasley & Associates"
           onLoad={() => setLoaded(true)}
-          loading="lazy"
           className="block h-full w-full border-0"
           style={{ height: SUITEDASH_FORM_HEIGHT }}
         />
