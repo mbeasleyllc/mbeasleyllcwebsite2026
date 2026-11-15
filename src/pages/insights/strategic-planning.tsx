@@ -1,137 +1,139 @@
-
 import React from "react";
-import Head from "next/head";
-import Layout from "@/components/layout/Layout";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import ArticleLayout, { H2, P, UL, LI } from "@/components/insights/ArticleLayout";
+import { getInsight } from "@/lib/insights";
 
-export default function StrategicPlanningInsight() {
+const insight = getInsight("strategic-planning")!;
+
+/**
+ * "Strategic planning for systems, not software."
+ *
+ * The argument is that a systems plan outlives a software plan. Kept free of
+ * invented benchmarks and client stories, for the same reason as the others.
+ */
+export default function Page() {
   return (
-    <Layout>
-      <Head>
-        <title>Strategic Planning in Uncertain Times | Insights</title>
-        <meta name="description" content="Discover a flexible framework for developing strategy amid uncertainty and navigating complex business environments." />
-      </Head>
+    <ArticleLayout insight={insight}>
+      <P>
+        Most technology plans are really software plans wearing a strategy
+        costume. They name products, versions and vendors, and they go stale the
+        moment one of those vendors changes its pricing, gets acquired, or
+        discontinues the tier you built on.
+      </P>
+      <P>
+        A systems plan is a different document. It describes how information
+        moves through your organisation, which handoffs are automatic and which
+        are somebody&rsquo;s job, and what you intend to do about that. It
+        survives a vendor change because it never depended on the vendor in the
+        first place.
+      </P>
 
-      <div className="container mx-auto px-4 py-12">
-        <Link href="/insights" className="inline-flex items-center text-gray-600 hover:text-black mb-8">
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to Insights
-        </Link>
+      <H2>Plan the flow, not the tools</H2>
+      <P>
+        The instinct to plan in products is understandable. Products have prices,
+        so they fit in a budget, and they have names, so they fit in a sentence.
+        Flows have neither, which is why they get skipped — and why the plan
+        fails.
+      </P>
+      <P>
+        Try it the other way. For each thing your organisation does repeatedly,
+        write the journey of the information rather than the name of the software
+        it currently lives in. An enquiry arrives, becomes a contact, gets a
+        proposal, becomes a project, generates an invoice, gets paid, gets
+        closed. That sequence is stable. Which product sits at each step is not.
+      </P>
+      <P>
+        Now you have something durable. When a tool changes, you re-point one
+        step. When a tool&rsquo;s price doubles, you can swap it without
+        rewriting the plan, because the plan was never about the tool.
+      </P>
 
-        <div className="relative h-[400px] mb-12">
-          <Image
-            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"
-            alt="Strategic Planning"
-            fill
-            style={{ objectFit: "cover" }}
-            className="rounded-xl"
-          />
-        </div>
+      <H2>Sequence so every step stands alone</H2>
+      <P>
+        This is the discipline that separates a plan from a wish. Every phase
+        should deliver something useful in the week it ships, independent of
+        whether the next phase ever happens.
+      </P>
+      <P>
+        It is tempting to design a beautiful end state and then slice it into
+        phases. Do not. A phase whose value only arrives once three more phases
+        are done is not a phase, it is a bet — and if the budget or the appetite
+        stops halfway, you are left with the cost and none of the benefit.
+      </P>
+      <UL>
+        <LI>
+          Good phase: the enquiry form now writes straight into the CRM, so
+          nobody re-types anything. Useful on day one.
+        </LI>
+        <LI>
+          Bad phase: the enquiry form is rebuilt to a new standard, and will pay
+          off once the CRM, the email platform and the reporting layer are all
+          replaced too.
+        </LI>
+      </UL>
+      <P>
+        The test is simple. If you had to stop after this phase and explain why
+        it was money well spent, could you? If the honest answer is &ldquo;it
+        will be, later,&rdquo; re-cut the phase.
+      </P>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="mb-8">
-            <h1 className="text-4xl font-bold mb-4">Strategic Planning in Uncertain Times</h1>
-            <div className="flex items-center gap-4 text-gray-600">
-              <span>By Michael Beasley</span>
-              <span>Category: Strategy</span>
-              <span>April 10, 2023</span>
-            </div>
-          </div>
+      <H2>Decide what you will never automate</H2>
+      <P>
+        Most plans have a list of things to automate. Very few have a list of
+        things that must stay human, and that omission is what makes automation
+        projects feel like they are eroding something.
+      </P>
+      <P>
+        Write the second list first, and write it down where people can see it.
+        Some candidates:
+      </P>
+      <UL>
+        <LI>
+          Any decision where you would have to explain to someone affected why
+          the answer came out that way.
+        </LI>
+        <LI>
+          Anything where the relationship is the deliverable — a thank-you that
+          matters, a difficult conversation, a first meeting.
+        </LI>
+        <LI>
+          Any judgement you would not delegate to a competent new starter in
+          their first month.
+        </LI>
+      </UL>
+      <P>
+        This list does two things. It protects the parts of the work that carry
+        your reputation, and it makes the automation conversation safe to have —
+        people stop defending their whole job when you have already said which
+        parts are staying.
+      </P>
 
-          <div className="prose max-w-none">
-            <p className="lead">
-              In today's volatile business environment, traditional strategic planning approaches often fall short. This article presents a flexible framework for developing and executing strategy amid uncertainty, helping organizations stay agile while maintaining strategic focus.
-            </p>
+      <H2>Measure handoffs, not launches</H2>
+      <P>
+        The usual progress metric is whether the new system is live. That tells
+        you almost nothing, because a live system that nobody connected is just a
+        more expensive filing cabinet.
+      </P>
+      <P>
+        Count handoffs instead. How many manual transfers of information did we
+        have before, and how many do we have now? How long does the most common
+        end-to-end journey take today, measured from the moment information
+        arrives to the moment the work is done? Those numbers move when the
+        project is working and stay flat when it is not, which is exactly what
+        you want from a metric.
+      </P>
 
-            <h2 className="text-2xl font-bold mt-8 mb-4">The New Strategic Planning Paradigm</h2>
-            <p>
-              Traditional annual planning cycles are giving way to more dynamic approaches:
-            </p>
-            <ul className="list-disc pl-6 mt-4 space-y-2">
-              <li>Continuous strategy development and refinement</li>
-              <li>Scenario-based planning</li>
-              <li>Rapid experimentation and learning</li>
-              <li>Adaptive execution frameworks</li>
-              <li>Real-time monitoring and adjustment</li>
-            </ul>
-
-            <h2 className="text-2xl font-bold mt-8 mb-4">Key Components of Adaptive Strategy</h2>
-            <h3 className="text-xl font-semibold mt-6 mb-3">1. Strategic Intelligence</h3>
-            <p>
-              Building robust market sensing capabilities:
-            </p>
-            <ul className="list-disc pl-6 mt-4 space-y-2">
-              <li>Real-time market monitoring</li>
-              <li>Competitive intelligence systems</li>
-              <li>Customer insight gathering</li>
-              <li>Trend analysis and forecasting</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold mt-6 mb-3">2. Scenario Planning</h3>
-            <p>
-              Developing multiple future scenarios to inform strategy:
-            </p>
-            <ul className="list-disc pl-6 mt-4 space-y-2">
-              <li>Alternative future state mapping</li>
-              <li>Risk assessment and mitigation</li>
-              <li>Opportunity identification</li>
-              <li>Resource allocation planning</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold mt-6 mb-3">3. Agile Execution</h3>
-            <p>
-              Implementing strategy with flexibility:
-            </p>
-            <ul className="list-disc pl-6 mt-4 space-y-2">
-              <li>Short planning and execution cycles</li>
-              <li>Regular strategy reviews</li>
-              <li>Quick pivot capabilities</li>
-              <li>Cross-functional collaboration</li>
-            </ul>
-
-            <h2 className="text-2xl font-bold mt-8 mb-4">Implementation Framework</h2>
-            <ol className="list-decimal pl-6 mt-4 space-y-2">
-              <li>Establish strategic intelligence systems</li>
-              <li>Develop scenario planning capabilities</li>
-              <li>Create agile execution processes</li>
-              <li>Build monitoring and adjustment mechanisms</li>
-              <li>Train teams in adaptive strategy</li>
-            </ol>
-
-            <h2 className="text-2xl font-bold mt-8 mb-4">Success Factors</h2>
-            <p>
-              Key elements for effective strategy in uncertain times:
-            </p>
-            <ul className="list-disc pl-6 mt-4 space-y-2">
-              <li>Leadership alignment and commitment</li>
-              <li>Clear communication channels</li>
-              <li>Data-driven decision making</li>
-              <li>Organizational agility</li>
-              <li>Strong change management</li>
-            </ul>
-
-            <div className="bg-gray-50 p-6 rounded-lg my-8">
-              <h2 className="text-2xl font-bold mb-4">About the Author</h2>
-              <p>
-                Michael Beasley brings over 15 years of experience in strategic planning and organizational transformation. His expertise in helping organizations navigate uncertainty and change has made him a trusted advisor to businesses across industries.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-12 flex justify-between items-center">
-            <Link href="/insights" className="inline-flex items-center text-gray-600 hover:text-black">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Insights
-            </Link>
-            <Button asChild>
-              <Link href="/contact">Get in Touch</Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-    </Layout>
+      <H2>What the plan looks like when it is done</H2>
+      <P>
+        Short. A page for the flows, a page for the phases, a page for the
+        never-automate list, and a note on how you will measure. If it is
+        longer than that, it has drifted back into being a software plan.
+      </P>
+      <P>
+        And review it when a tool changes, not on an annual cycle. The whole
+        advantage of planning the flow is that tool changes are cheap to absorb —
+        but only if you actually absorb them rather than waiting for the next
+        planning season.
+      </P>
+    </ArticleLayout>
   );
 }

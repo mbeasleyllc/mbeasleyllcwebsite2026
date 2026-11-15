@@ -1,6 +1,7 @@
 import type { GetServerSideProps } from "next";
 import { services } from "@/lib/services";
 import { solutions } from "@/lib/solutions";
+import { insights } from "@/lib/insights";
 
 /**
  * /sitemap.xml — generated from the same configs the pages are built from, so
@@ -22,6 +23,7 @@ function entries(): Entry[] {
     { path: "/solutions", priority: "0.9", changefreq: "monthly" },
     { path: "/contact", priority: "0.9", changefreq: "monthly" },
     { path: "/about", priority: "0.7", changefreq: "monthly" },
+    { path: "/insights", priority: "0.7", changefreq: "weekly" },
     { path: "/more", priority: "0.4", changefreq: "yearly" },
     { path: "/more/brand-design", priority: "0.4", changefreq: "yearly" },
     { path: "/more/communities", priority: "0.4", changefreq: "yearly" },
@@ -41,6 +43,11 @@ function entries(): Entry[] {
       path: s.slug,
       priority: "0.8",
       changefreq: "monthly",
+    })),
+    ...insights.map((a) => ({
+      path: `/insights/${a.slug}`,
+      priority: "0.6",
+      changefreq: "yearly",
     })),
   ];
 }

@@ -69,6 +69,19 @@ const nextConfig = {
       { source: '/services/course-design', destination: '/services', permanent: true },
       { source: '/services/learning-management', destination: '/services', permanent: true },
 
+      // ── Legal aliases ────────────────────────────────────────
+      // The prototype's sitemap writes /privacy-policy/ and /terms/; the pages
+      // live at /privacy and /terms. Redirect rather than rename, so any link
+      // written against the prototype still resolves.
+      { source: '/privacy-policy', destination: '/privacy', permanent: true },
+      { source: '/terms-of-service', destination: '/terms', permanent: true },
+
+      // ── Removed insights topic pages ─────────────────────────
+      // Six topic pages were fabricated — invented staff, "18 articles" while
+      // listing six, and every article link 404ing. They were live, so they
+      // redirect to the hub rather than 404 now that they are gone.
+      { source: '/insights/topics/:slug', destination: '/insights', permanent: true },
+
       // ── Paths live on the previous host ──────────────────────
       { source: '/Homepage', destination: '/', permanent: true },
       { source: '/design-services', destination: '/services', permanent: true },

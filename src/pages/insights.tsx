@@ -1,55 +1,234 @@
-
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Clock } from "lucide-react";
 import Layout from "@/components/layout/Layout";
-import InsightsHero from "@/components/insights/InsightsHero";
-import FeaturedInsight from "@/components/insights/FeaturedInsight";
-import InsightGrid from "@/components/insights/InsightGrid";
-import PopularTopics from "@/components/insights/PopularTopics";
-import Newsletter from "@/components/insights/Newsletter";
-import InsightsCTA from "@/components/insights/InsightsCTA";
+import { insightsNewestFirst } from "@/lib/insights";
+
+/**
+ * /insights — the hub.
+ *
+ * Rebuilt on the v2 design system. The previous version was the old template:
+ * "Beasley Consulting" branding, a fake author ("Sarah Johnson, Chief Strategy
+ * Officer"), Unsplash stock photos, and a topic section whose six pages invented
+ * staff and linked to articles that did not exist. All of that is gone.
+ *
+ * The honest framing below is deliberate. This is a new section with three
+ * articles in it, and it says so rather than padding the grid with placeholder
+ * cards to look established.
+ */
+
+const SITE_URL = "https://mbeasleyllc.com";
+const TITLE = "Insights | Mike Beasley & Associates";
+const DESCRIPTION =
+  "Practical writing on business automation, AI agents and connecting systems — from a firm that builds them, for organisations deciding what to change first.";
+
+function formatDate(iso: string) {
+  return new Date(iso + "T00:00:00Z").toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}
 
 export default function InsightsPage() {
+  const articles = insightsNewestFirst;
+
+  const collection = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: TITLE,
+    description: DESCRIPTION,
+    url: `${SITE_URL}/insights`,
+    isPartOf: { "@type": "WebSite", "@id": `${SITE_URL}/#website` },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: articles.map((a, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${SITE_URL}/insights/${a.slug}`,
+        name: a.title,
+      })),
+    },
+  };
+
+  const breadcrumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: "Insights", item: `${SITE_URL}/insights` },
+    ],
+  };
+
   return (
     <>
       <Head>
-        <title>Insights | Beasley Consulting</title>
-        <meta name="description" content="Explore Beasley Consulting's latest thinking on business strategy, leadership, digital transformation, and industry trends to help navigate complex challenges." />
-        <link rel="icon" href="/favicon.ico" />
+        <title>{TITLE}</title>
+        <meta name="description" content={DESCRIPTION} />
+        <link rel="canonical" href={`${SITE_URL}/insights`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={DESCRIPTION} />
+        <meta property="og:url" content={`${SITE_URL}/insights`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(collection) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+        />
       </Head>
-      
+
       <Layout>
-        <InsightsHero />
-        
-        <section className="py-24">
-          <div className="container mx-auto px-4 md:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Insight</h2>
-              <p className="text-xl text-gray-600">
-                Our latest perspective on a critical business challenge facing organizations today.
+        {/* ── Hero ─────────────────────────────────────────────── */}
+        <section className="relative overflow-hidden bg-ink pt-32 pb-16 md:pt-40 md:pb-20">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-40 left-[-10%] h-[32rem] w-[32rem] rounded-full bg-champagne/10 blur-3xl"
+          />
+          <div className="container relative">
+            <nav aria-label="Breadcrumb" className="text-sm text-mist">
+              <ol className="flex flex-wrap items-center gap-2">
+                <li>
+                  <Link href="/" className="hover:text-champagne">
+                    Home
+                  </Link>
+                </li>
+                <li aria-hidden="true">/</li>
+                <li className="text-ivory">Insights</li>
+              </ol>
+            </nav>
+
+            <div className="mt-10 max-w-3xl">
+              <p className="type-eyebrow text-champagne">Insights</p>
+              <h1 className="type-display mt-4 text-ivory">
+                Notes from inside the work.
+              </h1>
+              <p className="type-lead mt-6 text-mist">
+                Practical writing on automation, AI agents and getting systems to
+                talk to each other — written for the person deciding what to
+                change first, not for a procurement committee.
               </p>
             </div>
-            
-            <FeaturedInsight 
-              title="The Future of Work: Navigating Remote and Hybrid Models"
-              category="Leadership"
-              description="The pandemic has permanently changed how we work, with remote and hybrid models becoming the new normal. This shift presents both challenges and opportunities for organizations. Leaders must now navigate maintaining company culture, ensuring productivity, and supporting employee well-being in distributed environments. This article explores strategies for success in this new paradigm."
-              author={{
-                name: "Sarah Johnson",
-                role: "Chief Strategy Officer",
-                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2576&q=80"
-              }}
-              date="May 15, 2023"
-              image="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-              href="/insights/future-of-work"
-            />
           </div>
         </section>
-        
-        <InsightGrid />
-        <PopularTopics />
-        <Newsletter />
-        <InsightsCTA />
+
+        {/* ── Articles ─────────────────────────────────────────── */}
+        <section className="section bg-ivory">
+          <div className="container">
+            <div className="grid gap-8 lg:grid-cols-[1fr_20rem] lg:gap-14">
+              <div>
+                <div className="grid gap-6">
+                  {articles.map((a) => (
+                    <article
+                      key={a.slug}
+                      className="group rounded-xl border border-ink/10 bg-white p-6 transition-colors hover:border-champagne md:p-8"
+                    >
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
+                        <span className="type-eyebrow text-gold-deep">
+                          {a.category}
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 text-graphite">
+                          <Clock size={12} aria-hidden="true" />
+                          {a.readingMinutes} min read
+                        </span>
+                        <span className="text-graphite">
+                          {formatDate(a.published)}
+                        </span>
+                      </div>
+
+                      <h2 className="type-h3 mt-4 text-ink">
+                        <Link href={`/insights/${a.slug}`} className="hover:text-gold-deep">
+                          {a.title}
+                        </Link>
+                      </h2>
+
+                      <p className="mt-3 text-graphite">{a.excerpt}</p>
+
+                      <Link
+                        href={`/insights/${a.slug}`}
+                        className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-gold-deep underline-offset-4 hover:underline"
+                      >
+                        Read it
+                        <ArrowRight
+                          size={16}
+                          className="transition-transform group-hover:translate-x-1"
+                          aria-hidden="true"
+                        />
+                      </Link>
+                    </article>
+                  ))}
+                </div>
+              </div>
+
+              {/* Sidebar — honest about the state of the section. */}
+              <aside className="lg:pt-2">
+                <div className="rounded-xl border border-ink/10 bg-white p-6">
+                  <h2 className="type-eyebrow text-gold-deep">About this section</h2>
+                  <p className="mt-4 text-sm leading-relaxed text-graphite">
+                    This is new. There are{" "}
+                    <strong className="font-semibold text-ink">
+                      {articles.length} articles
+                    </strong>{" "}
+                    here because there are {articles.length} worth publishing —
+                    we would rather it look thin than pad it out with pieces
+                    nobody wrote.
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-graphite">
+                    Everything is written by Mike, from the same work that shows
+                    up in the services. No ghostwritten thought leadership, no
+                    invented case studies.
+                  </p>
+                </div>
+
+                <div className="mt-6 rounded-xl border border-ink/10 bg-ink p-6">
+                  <h2 className="type-eyebrow text-champagne">
+                    Something you want covered?
+                  </h2>
+                  <p className="mt-4 text-sm leading-relaxed text-mist">
+                    If there is a question about automation you cannot find a
+                    straight answer to, ask it. Good ones turn into articles.
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="mt-5 inline-flex items-center gap-2 rounded-md bg-champagne px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-gold-soft"
+                  >
+                    Ask a question
+                    <ArrowUpRight size={16} aria-hidden="true" />
+                  </Link>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        {/* ── CTA ──────────────────────────────────────────────── */}
+        <section className="section-tight surface-dark">
+          <div className="container">
+            <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+              <div className="max-w-2xl">
+                <h2 className="type-h2 text-ivory">
+                  Reading is cheap. Finding out is better.
+                </h2>
+                <p className="type-lead mt-4 text-mist">
+                  A free 30-minute review maps your most repetitive processes and
+                  picks the top three candidates. No cost, no obligation.
+                </p>
+              </div>
+              <Link
+                href="/contact"
+                className="inline-flex shrink-0 items-center gap-2 rounded-md bg-champagne px-7 py-4 text-base font-semibold text-ink transition-colors hover:bg-gold-soft"
+              >
+                Book the review
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </section>
       </Layout>
     </>
   );
