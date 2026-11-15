@@ -4,7 +4,7 @@
  * Services mega-menu grouped by customer journey, plus Solutions,
  * Hosting & VPS, About and Insights.
  *
- * Courses / LMS are deliberately absent — removed from the offer in v2.
+ * Courses / LMS are deliberately absent: removed from the offer in v2.
  */
 
 export type NavLink = {
@@ -55,7 +55,7 @@ export const serviceGroups: NavGroup[] = [
       {
         name: "AI Agents & Business Automation",
         href: "/services/ai-agents-automation",
-        description: "Agents that triage and draft — with your approval",
+        description: "Agents that triage and draft, with your approval",
       },
       {
         name: "IT Integration",
@@ -66,7 +66,7 @@ export const serviceGroups: NavGroup[] = [
   },
 ];
 
-/** Kept findable but out of the main journey — "Also from us". */
+/** Kept findable but out of the main journey: "Also from us". */
 export const moreServices: NavLink[] = [
   { name: "Brand & Logo Design", href: "/more/brand-design" },
   { name: "Communities", href: "/more/communities" },
@@ -108,7 +108,7 @@ export const INTRO_BOOKING_URL = "https://tidycal.com/mikebeasley/15-minute-meet
 export const REVIEW_BOOKING_URL = "https://tidycal.com/mikebeasley/30-minute-meeting";
 
 /** The header CTA points at /contact, which offers both booking paths and the
- *  form — one destination for every "Book a free review" button on the site. */
+ *  form: one destination for every "Book a free review" button on the site. */
 export const REVIEW_HREF = "/contact";
 
 /** All eight capabilities, for the homepage grid. */

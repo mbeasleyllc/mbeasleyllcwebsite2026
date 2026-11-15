@@ -66,7 +66,7 @@ export default function Header() {
           <Link
             href="/"
             className="flex shrink-0 items-center"
-            aria-label="Mike Beasley & Associates — home"
+            aria-label="Mike Beasley & Associates, home"
           >
             <Image
               src="/mikebealsleyanassociate-logowht-v1-mao52vtw.png"

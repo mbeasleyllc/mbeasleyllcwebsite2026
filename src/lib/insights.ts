@@ -1,5 +1,5 @@
 /**
- * Insights — the article set, in one place.
+ * Insights: the article set, in one place.
  *
  * The hub, the sitemap and each article's metadata all read from here, so a new
  * article is one entry plus its page file and cannot drift out of the sitemap.
@@ -12,14 +12,14 @@
  * 404'd. None of it was real. It has been removed rather than restyled.
  *
  * Rules this file follows, and any future entry must follow:
- * - Only articles that actually exist are listed. No placeholder cards.
- * - Attributed to Mike Beasley, the one real author.
- * - No invented statistics, client results, or dates that imply a history the
+ * Only articles that actually exist are listed. No placeholder cards.
+ * Attributed to Mike Beasley, the one real author.
+ * No invented statistics, client results, or dates that imply a history the
  *   site does not have. These are newly published.
  */
 
 export interface Insight {
-  /** URL segment — the page lives at /insights/<slug> */
+  /** URL segment: the page lives at /insights/<slug> */
   slug: string;
   /** Card and nav title */
   title: string;
@@ -35,7 +35,7 @@ export interface Insight {
   published: string;
   /** Shown as "N min read" */
   readingMinutes: number;
-  /** The 3–4 claims the article actually makes, shown up top */
+  /** The three or four claims the article actually makes, shown up top */
   takeaways: string[];
 }
 
@@ -59,7 +59,7 @@ export const insights: Insight[] = [
     readingMinutes: 7,
     takeaways: [
       "Buying software is not the same as connecting systems, and only one of them changes how the work gets done.",
-      "The failure point is almost always the join — the point where one system has to hand something to another.",
+      "The failure point is almost always the join: the point where one system has to hand something to another.",
       "You can find your worst joins in an afternoon, without buying anything.",
     ],
   },
@@ -75,7 +75,7 @@ export const insights: Insight[] = [
     published: "2026-11-11",
     readingMinutes: 8,
     takeaways: [
-      "Agents are good at bounded, repetitive, text-shaped work — and bad at judgement, accountability and anything ambiguous.",
+      "Agents are good at bounded, repetitive, text-shaped work, and bad at judgement, accountability and anything ambiguous.",
       "The unit of change is the task, not the role.",
       "If you cannot describe the task as a set of rules, an agent will not do it reliably yet.",
     ],
@@ -92,7 +92,7 @@ export const insights: Insight[] = [
     published: "2026-11-15",
     readingMinutes: 7,
     takeaways: [
-      "Plan the flow of information, not the list of tools — tools are replaceable, flows are not.",
+      "Plan the flow of information, not the list of tools. Tools are replaceable, flows are not.",
       "Sequence so every step stands alone; a step that only pays off after the next one is a bet, not a phase.",
       "Decide what you will never automate before you decide what you will.",
     ],
@@ -104,7 +104,7 @@ export function getInsight(slug: string): Insight | undefined {
   return insights.find((i) => i.slug === slug);
 }
 
-/** Newest first — the hub and any "latest" list should use this. */
+/** Newest first: the hub and any "latest" list should use this. */
 export const insightsNewestFirst = [...insights].sort((a, b) =>
   b.published.localeCompare(a.published),
 );

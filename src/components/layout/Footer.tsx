@@ -33,7 +33,7 @@ export default function Footer() {
             <Link
               href="/"
               className="inline-block"
-              aria-label="Mike Beasley & Associates — home"
+              aria-label="Mike Beasley & Associates, home"
             >
               <Image
                 src="/mikebealsleyanassociate-logowht-v1-mao52vtw.png"
@@ -58,7 +58,7 @@ export default function Footer() {
               </a>
               <p className="mt-2">Fairfax, Virginia</p>
               <p className="mt-1 text-xs">
-                Serving Virginia and North Carolina — and remotely, anywhere in
+                Serving Virginia and North Carolina, plus remotely anywhere in
                 the US.
               </p>
             </address>

@@ -7,7 +7,7 @@ const insight = getInsight("digital-transformation")!;
 /**
  * "Digital transformation without the theatre."
  *
- * Deliberately carries no statistics and no client results — the firm has no
+ * Deliberately carries no statistics and no client results: the firm has no
  * published case studies yet, and inventing either would be the exact thing the
  * article argues against.
  */
@@ -23,7 +23,7 @@ export default function Page() {
       </P>
       <P>
         But the work does not live in the products. It lives in the gaps between
-        them — and that is where nearly every project I have seen goes wrong.
+them, and that is where nearly every project I have seen goes wrong.
       </P>
 
       <H2>Buying software is not connecting systems</H2>
@@ -35,7 +35,7 @@ export default function Page() {
       <P>
         A new donor system that does not talk to your email platform has not
         removed any work. It has moved work. Someone now has to export a list,
-        clean it, and import it somewhere else — and they will do that every
+        clean it, and import it somewhere else. They will do that every
         week, forever, and it will never appear on any project plan.
       </P>
       <P>
@@ -80,7 +80,7 @@ export default function Page() {
           remembered.
         </LI>
         <LI>
-          Mark how often it happens — daily is different from quarterly, and
+          Mark how often it happens. Daily is different from quarterly, and
           both matter differently than you would guess.
         </LI>
         <LI>
@@ -103,8 +103,7 @@ export default function Page() {
       </P>
       <P>
         And prefer fixes that stand on their own. A step that only delivers value
-        after the next three steps are finished is not a phase, it is a bet —
-        and if the budget stops halfway, you are left with cost and no benefit.
+        after the next three steps are finished is not a phase, it is a bet. If the budget stops halfway, you are left with cost and no benefit.
         Each piece should make something better the week it ships.
       </P>
 
@@ -114,7 +113,7 @@ export default function Page() {
         second. Start from the handoffs, decide which ones you are going to
         eliminate, and only then ask what tooling that requires. Sometimes the
         answer is a new system. Often it is a connection between two you already
-        own — and occasionally it is deleting a step entirely, which costs
+own. Occasionally it is deleting a step entirely, which costs
         nothing and is the best outcome available.
       </P>
       <P>

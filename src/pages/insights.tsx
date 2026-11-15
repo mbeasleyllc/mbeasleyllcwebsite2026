@@ -6,7 +6,7 @@ import Layout from "@/components/layout/Layout";
 import { insightsNewestFirst } from "@/lib/insights";
 
 /**
- * /insights — the hub.
+ * /insights: the hub.
  *
  * Rebuilt on the v2 design system. The previous version was the old template:
  * "Beasley Consulting" branding, a fake author ("Sarah Johnson, Chief Strategy
@@ -21,7 +21,7 @@ import { insightsNewestFirst } from "@/lib/insights";
 const SITE_URL = "https://mbeasleyllc.com";
 const TITLE = "Insights | Mike Beasley & Associates";
 const DESCRIPTION =
-  "Practical writing on business automation, AI agents and connecting systems — from a firm that builds them, for organisations deciding what to change first.";
+  "Practical writing on business automation, AI agents and connecting systems. Written by a firm that builds them, for organisations deciding what to change first.";
 
 function formatDate(iso: string) {
   return new Date(iso + "T00:00:00Z").toLocaleDateString("en-US", {
@@ -110,7 +110,7 @@ export default function InsightsPage() {
               </h1>
               <p className="type-lead mt-6 text-mist">
                 Practical writing on automation, AI agents and getting systems to
-                talk to each other — written for the person deciding what to
+                talk to each other. Written for the person deciding what to
                 change first, not for a procurement committee.
               </p>
             </div>
@@ -165,7 +165,7 @@ export default function InsightsPage() {
                 </div>
               </div>
 
-              {/* Sidebar — honest about the state of the section. */}
+              {/* Sidebar: honest about the state of the section. */}
               <aside className="lg:pt-2">
                 <div className="rounded-xl border border-ink/10 bg-white p-6">
                   <h2 className="type-eyebrow text-gold-deep">About this section</h2>
@@ -174,8 +174,7 @@ export default function InsightsPage() {
                     <strong className="font-semibold text-ink">
                       {articles.length} articles
                     </strong>{" "}
-                    here because there are {articles.length} worth publishing —
-                    we would rather it look thin than pad it out with pieces
+                    here because there are {articles.length} worth publishing. We would rather it look thin than pad it out with pieces
                     nobody wrote.
                   </p>
                   <p className="mt-4 text-sm leading-relaxed text-graphite">

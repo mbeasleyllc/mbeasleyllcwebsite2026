@@ -33,19 +33,19 @@ export default function Page() {
       </P>
       <UL>
         <LI>
-          Reading something and pulling structured facts out of it — an enquiry
+          Reading something and pulling structured facts out of it, such as an enquiry
           email into a name, a need and a deadline.
         </LI>
         <LI>
-          Sorting and routing — deciding which of four inboxes a message belongs
+          Sorting and routing, such as deciding which of four inboxes a message belongs
           in, and saying why.
         </LI>
         <LI>
-          Drafting the first version — a reply, a summary, a description, a
-          follow-up that a person then edits.
+          Drafting the first version of something, such as a reply, a summary, a
+          description, or a follow-up that a person then edits.
         </LI>
         <LI>
-          Checking consistency — does this record agree with that one, is
+          Checking consistency: does this record agree with that one, is
           anything obviously missing, does this look like the other fifty.
         </LI>
       </UL>
@@ -65,7 +65,7 @@ export default function Page() {
         <LI>
           <strong>Judgement with consequences.</strong> Deciding whether a
           donation is restricted, whether a complaint needs escalating, whether a
-          refund is warranted — these need someone who can be held to the answer.
+          refund is warranted. These need someone who can be held to the answer.
           An agent cannot be.
         </LI>
         <LI>
@@ -121,7 +121,7 @@ export default function Page() {
         </LI>
         <LI>
           Would anyone notice if the output were subtly wrong? If not, you are
-          not ready to automate it yet — not because the technology cannot, but
+          not ready to automate it yet, not because the technology cannot, but
           because you cannot tell whether it worked.
         </LI>
       </UL>
@@ -136,8 +136,8 @@ export default function Page() {
       <P>
         Not headcount, in most organisations. What changes is where the human
         attention goes. The dull, bounded, repetitive middle of the work thins
-        out, and the judgement, relationships and accountability — the parts that
-        were always the point — get more time than they have had in years.
+        out, and the judgement, relationships and accountability, which were always the point,
+        get more time than they have had in years.
       </P>
       <P>
         That is a smaller claim than the headlines make. It is also the one that

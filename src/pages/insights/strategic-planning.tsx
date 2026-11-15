@@ -31,7 +31,7 @@ export default function Page() {
       <P>
         The instinct to plan in products is understandable. Products have prices,
         so they fit in a budget, and they have names, so they fit in a sentence.
-        Flows have neither, which is why they get skipped — and why the plan
+        Flows have neither, which is why they get skipped, and why the plan
         fails.
       </P>
       <P>
@@ -56,7 +56,7 @@ export default function Page() {
       <P>
         It is tempting to design a beautiful end state and then slice it into
         phases. Do not. A phase whose value only arrives once three more phases
-        are done is not a phase, it is a bet — and if the budget or the appetite
+        are done is not a phase, it is a bet. If the budget or the appetite
         stops halfway, you are left with the cost and none of the benefit.
       </P>
       <UL>
@@ -92,8 +92,8 @@ export default function Page() {
           the answer came out that way.
         </LI>
         <LI>
-          Anything where the relationship is the deliverable — a thank-you that
-          matters, a difficult conversation, a first meeting.
+          Anything where the relationship is the deliverable, such as a thank-you that
+          matters, a difficult conversation, or a first meeting.
         </LI>
         <LI>
           Any judgement you would not delegate to a competent new starter in
@@ -102,8 +102,8 @@ export default function Page() {
       </UL>
       <P>
         This list does two things. It protects the parts of the work that carry
-        your reputation, and it makes the automation conversation safe to have —
-        people stop defending their whole job when you have already said which
+        your reputation, and it makes the automation conversation safe to have.
+        People stop defending their whole job when you have already said which
         parts are staying.
       </P>
 
@@ -130,8 +130,7 @@ export default function Page() {
       </P>
       <P>
         And review it when a tool changes, not on an annual cycle. The whole
-        advantage of planning the flow is that tool changes are cheap to absorb —
-        but only if you actually absorb them rather than waiting for the next
+        advantage of planning the flow is that tool changes are cheap to absorb, but only if you actually absorb them rather than waiting for the next
         planning season.
       </P>
     </ArticleLayout>

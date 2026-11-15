@@ -12,7 +12,7 @@ import type { Insight } from "@/lib/insights";
  * is a content file rather than a copy of another article's markup.
  *
  * Carries the Article schema with Mike as the author and the organisation as the
- * publisher — the previous article pages had no schema at all.
+ * publisher: the previous article pages had no schema at all.
  */
 
 const SITE_URL = "https://mbeasleyllc.com";
@@ -133,7 +133,7 @@ export default function ArticleLayout({
                 <Link href="/about" className="text-champagne underline-offset-4 hover:underline">
                   Mike Beasley
                 </Link>
-                , Founder — Mike Beasley &amp; Associates
+                , Founder, Mike Beasley &amp; Associates
               </p>
             </div>
           </div>
@@ -143,7 +143,7 @@ export default function ArticleLayout({
         <section className="section bg-ivory">
           <div className="container">
             <div className="mx-auto max-w-3xl">
-              {/* Takeaways — the claims the piece actually makes, up front. */}
+              {/* Takeaways: the claims the piece actually makes, up front. */}
               {insight.takeaways.length > 0 && (
                 <div className="mb-12 rounded-xl border border-ink/10 bg-white p-6 md:p-8">
                   <h2 className="type-eyebrow text-gold-deep">
