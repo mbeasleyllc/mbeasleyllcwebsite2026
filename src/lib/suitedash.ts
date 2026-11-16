@@ -42,14 +42,19 @@ export const SUITEDASH_FALLBACK_URL =
 /**
  * Frame height in px.
  *
- * Measured, not guessed: at the wrapper's 663px width the form's content ends
- * at 694px (4 fields: first name, last name, email, phone, plus SUBMIT).
- * SuiteDash's own embed script hardcodes 600, which clips the submit button;
- * 900 was my first attempt and left 170px of dead white space. 800 clears the
- * content on desktop and gives narrow viewports some room, where the fields
- * reflow taller and the frame scrolls internally.
+ * Measured, not guessed. At the wrapper's 663px width the form now ends at
+ * 1159px: logo, intro, first name, last name, email, phone, the "what are you
+ * trying to solve" textarea, the multi-select service list, the appointment
+ * block, and SUBMIT.
+ *
+ * History: the original 4-field form ended at 694px, so 800 was right. Adding
+ * the two custom fields and the Appointment Block pushed the submit button to
+ * 1159px, which 800 would clip. SuiteDash's own embed script hardcodes 600 and
+ * clips even the short version.
+ *
+ * Re-measure whenever a field is added or removed.
  */
-export const SUITEDASH_FORM_HEIGHT = 800;
+export const SUITEDASH_FORM_HEIGHT = 1200;
 
 /** True once a public embed URL has been configured. */
 export const hasSuiteDashForm = Boolean(SUITEDASH_FORM_URL);
