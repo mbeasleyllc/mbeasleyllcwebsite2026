@@ -197,8 +197,6 @@ export default function ContactPage() {
 
                   <a
                     href={b.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className={`mt-6 inline-flex items-center justify-center gap-2 rounded-md px-6 py-3.5 text-base font-semibold transition-colors ${
                       b.primary
                         ? "bg-champagne text-ink hover:bg-gold-soft"
@@ -211,11 +209,18 @@ export default function ContactPage() {
                 </div>
               ))}
             </div>
+
+            <p className="mt-6 text-sm text-graphite">
+              Either button takes you to the booking form below, where you
+              choose the 15 or 30 minute slot. Bookings go straight into our
+              scheduling system, so you get the confirmation and a calendar
+              invite.
+            </p>
           </div>
         </section>
 
         {/* ── Form + Mike ──────────────────────────────────────── */}
-        <section className="section surface-dark">
+        <section id="lets-talk" className="section surface-dark scroll-mt-24">
           <div className="container">
             <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
               <div>

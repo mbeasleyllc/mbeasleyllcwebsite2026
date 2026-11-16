@@ -103,9 +103,19 @@ export const PORTAL_URL = "https://secure.mbeasleyllc.com";
 export const CONTACT_EMAIL = "mike@mbeasleyllc.com";
 
 /** The two booking paths the prototype calls for on /contact:
- *  "15-minute intro and the 30-minute free automation review". */
-export const INTRO_BOOKING_URL = "https://tidycal.com/mikebeasley/15-minute-meeting";
-export const REVIEW_BOOKING_URL = "https://tidycal.com/mikebeasley/30-minute-meeting";
+ *  "15-minute intro and the 30-minute free automation review".
+ *
+ *  Both point at the SuiteDash form on this page rather than an external
+ *  scheduler. The form's appointment block offers the 15-minute and the
+ *  30-minute generator, so a booking there creates a real SuiteDash
+ *  Appointment and fires the Deal automation. The old TidyCal links were
+ *  removed: a TidyCal booking emailed a confirmation and wrote nothing to
+ *  SuiteDash, which is why website bookings produced no contact, no
+ *  appointment and no Deal. Never reintroduce an off-site booking link here.
+ */
+export const BOOKING_HREF = "/contact#lets-talk";
+export const INTRO_BOOKING_URL = BOOKING_HREF;
+export const REVIEW_BOOKING_URL = BOOKING_HREF;
 
 /** The header CTA points at /contact, which offers both booking paths and the
  *  form: one destination for every "Book a free review" button on the site. */
